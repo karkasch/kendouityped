@@ -23,7 +23,7 @@ var Experiments;
                             console.log('schema data', response);
                             return response;
                         },
-                        model: ChapterDataSourceItemModel
+                        model: Experiments.Models.ChapterDataSourceItemModel
                     }
                 });
                 //this.init({
@@ -45,15 +45,6 @@ var Experiments;
             return ChaptersDataSource;
         })(kendo.data.DataSource);
         Data.ChaptersDataSource = ChaptersDataSource;
-        var ChapterDataSourceItemModel = (function (_super) {
-            __extends(ChapterDataSourceItemModel, _super);
-            function ChapterDataSourceItemModel(value) {
-                _super.call(this, value);
-                this.id = 'id';
-            }
-            return ChapterDataSourceItemModel;
-        })(kendo.data.Model);
-        Data.ChapterDataSourceItemModel = ChapterDataSourceItemModel;
     })(Data = Experiments.Data || (Experiments.Data = {}));
 })(Experiments || (Experiments = {}));
 //# sourceMappingURL=chapters.datasource.js.map

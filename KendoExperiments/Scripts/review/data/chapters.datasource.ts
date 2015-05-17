@@ -15,7 +15,7 @@
 
                         return response;
                     },
-                    model: ChapterDataSourceItemModel
+                    model: Experiments.Models.ChapterDataSourceItemModel
                     //model: {
                     //    id: "id",
                     //    fields: {
@@ -46,17 +46,5 @@
         }
     }
 
-    export class ChapterDataSourceItemModel extends kendo.data.Model {
-        //id: number;
-        name: string;
-        order: number;
-
-        contentVisible: boolean;
-
-        constructor(value?: any) {
-            super(value);
-
-            this.id = 'id';
-        }
-    }
+    
 } 

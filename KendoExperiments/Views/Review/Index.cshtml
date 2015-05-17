@@ -30,13 +30,23 @@
 <script id="chapter-item-template" type="text/x-kendo-template">
     # console.log('itemmmm', data); #
     <div>
-        <div class="item-title">
-            #: name # <span data-bind="html: name"></span>
+        <div class="item-title" data-bind="events: { click: showDetails }">
+            <span data-bind="html: name"></span>
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
             #= order #
+            <div data-bind="source: questionsViewModel" data-template="questions-template"></div>
         </div>
     </div>
+</script>
+
+<script id="questions-template" type="text/x-kendo-template">
+    # if (data != null) { #
+    <div>
+        <h3>Questions</h3>
+        <span data-bind="text: test"></span>
+    </div>
+    # } #
 </script>
 
 @section scripts {

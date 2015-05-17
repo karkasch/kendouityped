@@ -1172,7 +1172,10 @@
     <TypeScriptCompile Include="kendo\typescript\kendo.all.d.ts" />
     <TypeScriptCompile Include="Scripts\contractsapp\models\contracts.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\data\chapters.datasource.ts" />
-    <TypeScriptCompile Include="Scripts\review\models\chapters.viewmodel.ts" />
+    <TypeScriptCompile Include="Scripts\review\data\questions.datasource.ts" />
+    <TypeScriptCompile Include="Scripts\review\models\chapters.datasourceitem.model.ts" />
+    <TypeScriptCompile Include="Scripts\review\viewmodels\chapters.viewmodel.ts" />
+    <TypeScriptCompile Include="Scripts\review\viewmodels\questions.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\review.app.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\lib.es6.d.ts" />
