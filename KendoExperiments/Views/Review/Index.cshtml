@@ -29,18 +29,25 @@
 
 <script id="chapter-item-template" type="text/x-kendo-template">
     # console.log('itemmmm', data); #
-    <div>
+    <div class="chapter">
         <div class="item-title" data-bind="events: { click: showDetails }">
             <span data-bind="html: name"></span>
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
             #= order #
-            <div data-bind="source: questionsViewModel" data-template="questions-template"></div>
+            <div class="questions"></div>
         </div>
     </div>
 </script>
 
 <script id="questions-template" type="text/x-kendo-template">
+    <div>
+        <h3>Questions</h3>
+        <div data-role="listview" data-bind="source: questionsDataSource" data-demplate="question-item-template"></div>
+    </div>
+</script>
+
+<script id="question-item-template" type="text/x-kendo-template">
     # if (data != null) { #
     <div>
         <h3>Questions</h3>

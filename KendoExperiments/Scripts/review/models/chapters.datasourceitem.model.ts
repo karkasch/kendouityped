@@ -13,7 +13,7 @@
             super(value);
 
             this.id = 'id';
-
+            //this.questionsViewModel = {};
         }
 
         showDetails(e: any) {
@@ -23,8 +23,12 @@
             if (questionsViewModel == null) {
                 questionsViewModel = new Experiments.Models.QuestionsViewModel(e.data.id);
                 this.set('questionsViewModel', questionsViewModel);
+
+                var questionsView = new kendo.View('#questions-template', { model: questionsViewModel });
+                questionsView.render($(e.target).closest('.chapter').find('.questions'));
             }
 
+            this.set('contentVisible', !this.get('contentVisible'));
         }
     }
 } 
