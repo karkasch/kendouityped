@@ -1,6 +1,6 @@
 ﻿module Experiments.Models {
     export class ChapterDataSourceItemModel extends kendo.data.Model {
-        //id: number;
+        id: number;
         name: string;
         order: number;
 
@@ -12,7 +12,7 @@
         constructor(value?: any) {
             super(value);
 
-            this.id = 'id';
+            //this.id = 'id';
             //this.questionsViewModel = {};
         }
 

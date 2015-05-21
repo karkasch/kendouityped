@@ -12,7 +12,7 @@ var Experiments;
             __extends(ChapterDataSourceItemModel, _super);
             function ChapterDataSourceItemModel(value) {
                 _super.call(this, value);
-                this.id = 'id';
+                //this.id = 'id';
                 //this.questionsViewModel = {};
             }
             ChapterDataSourceItemModel.prototype.showDetails = function (e) {

@@ -24,10 +24,19 @@ namespace KendoExperiments.api
                 new ChapterModel() { Id = 2, Name = "Upload", Order = 2 },
                 new ChapterModel() { Id = 3, Name = "Engine", Order = 3 },
             };
+
+            Questions = new List<QuestionModel>()
+            {
+                new QuestionModel() { Id = 1, Name = "Age?", Order = 1 },
+                new QuestionModel() { Id = 2, Name = "Name?", Order = 2 },
+                new QuestionModel() { Id = 3, Name = "Engine date", Order = 3 },
+                new QuestionModel() { Id = 4, Name = "Yes/No", Order = 4 },
+            };
         }
 
 
         public static List<CustomerModel> Customers { get; set; }
         public static List<ChapterModel> Chapters { get; set; }
+        public static List<QuestionModel> Questions { get; set; }
     }
 }

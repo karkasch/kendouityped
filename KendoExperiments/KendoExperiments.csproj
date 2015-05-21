@@ -167,10 +167,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\Controllers\QuestionsController.cs" />
     <Compile Include="api\Controllers\ChaptersController.cs" />
     <Compile Include="api\Controllers\CustomersController.cs" />
     <Compile Include="api\Controllers\TestController.cs" />
     <Compile Include="api\Db.cs" />
+    <Compile Include="api\Models\QuestionModel.cs" />
     <Compile Include="api\Models\ChapterModel.cs" />
     <Compile Include="api\Models\CustomerModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -1169,6 +1171,7 @@
     <TypeScriptCompile Include="Scripts\review\data\chapters.datasource.ts" />
     <TypeScriptCompile Include="Scripts\review\data\questions.datasource.ts" />
     <TypeScriptCompile Include="Scripts\review\models\chapters.datasourceitem.model.ts" />
+    <TypeScriptCompile Include="Scripts\review\models\questions.datasourceitem.model.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\chapters.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\questions.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\review.app.ts" />

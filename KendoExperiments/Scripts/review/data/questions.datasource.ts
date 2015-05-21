@@ -8,6 +8,9 @@
                         url: '/api/v1/chapters/' + chapterId + '/questions',
                         dataType: 'json'
                     }
+                },
+                schema: {
+                    model: Experiments.Models.QuestionsDataSourceItemModel
                 }
             });
         }
