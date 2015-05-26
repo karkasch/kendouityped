@@ -22,7 +22,7 @@ var Experiments;
                     questionsViewModel = new Experiments.Models.QuestionsViewModel(e.data.id);
                     this.set('questionsViewModel', questionsViewModel);
                     var questionsView = new kendo.View('#questions-template', { model: questionsViewModel });
-                    questionsView.render($(e.target).closest('.chapter').find('.questions'));
+                    questionsView.render($(e.target).closest('.chapter').find('.questions-panel'));
                 }
                 this.set('contentVisible', !this.get('contentVisible'));
             };

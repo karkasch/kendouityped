@@ -4,25 +4,28 @@
     ViewBag.Title = "SPA";
 }
 
+@section head {
+    @Styles.Render("~/Content/review")
+}
+
 <div id="application"></div>
 
 
 <script id="layout-template" type="text/x-kendo-template">
     <div>
-        <div id="chapters-view"></div>
-        <div id="question-details-view"></div>
+        <div id="chapters-view" class="left-panel"></div>
+        <div id="question-details-view" class="right-panel">13</div>
+        <div class="cleared"></div>
     </div>
 </script>
 
 <script id="chapters-template" type="text/x-kendo-template">
-    <div>
+    <div class="chapters-panel">
         <h2>Chapters</h2>
-        <div data-bind="html: test"></div>
 
         <div data-role="listview"
                  data-template="chapter-item-template"
-                 data-bind="source: chapters"
-                 style="width: 420px; height: 200px; border: solid 1px red; overflow: auto"></div>
+                 data-bind="source: chapters" class="chapters-list" ></div>
 
     </div>
 </script>
@@ -34,24 +37,19 @@
             <span data-bind="html: name"></span>
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
-            #= order #
-            <div class="questions"></div>
+            <div class="questions-panel"></div>
         </div>
     </div>
 </script>
 
 <script id="questions-template" type="text/x-kendo-template">
     <div>
-        <h3>Questions</h3>
-        <span data-bind="text: test"></span>
-        
-        <div data-role="listview" data-bind="source: questionsDataSource" data-demplate="question-item-template"></div>
+        <div data-role="listview" data-bind="source: questionsDataSource" data-template="question-item-template"></div>
     </div>
 </script>
 
 <script id="question-item-template" type="text/x-kendo-template">
-    <div>
-        <h4>Question</h4>
+    <div class="question-item">
         <span data-bind="text: name"></span>
     </div>
 </script>

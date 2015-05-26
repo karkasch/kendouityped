@@ -6,14 +6,15 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("head", false)
 </head>
 <body>
-    <header>Header</header>
+    <header>Kendo SPA Typed</header>
     <section class="main">
         @RenderBody()
     </section>
     <footer>
-        Kendo experiments
+        &copy;2015 Kendo experiments
     </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

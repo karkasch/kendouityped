@@ -41,6 +41,10 @@ namespace KendoExperiments
                 "~/Scripts/review/viewmodels/questions.viewmodel.js",
                 
                 "~/Scripts/review/review.app.js"));
+
+            bundles.Add(new StyleBundle("~/Content/review").Include(
+                "~/Content/review.css"
+                ));
         }
     }
 }

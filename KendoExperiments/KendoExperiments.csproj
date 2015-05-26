@@ -199,6 +199,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\review.css">
+      <DependentUpon>review.less</DependentUpon>
+    </Content>
+    <Content Include="Content\review.min.css">
+      <DependentUpon>review.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -965,6 +971,10 @@
     <Content Include="kendo\styles\Uniform\sprite_2x.png" />
     <Content Include="kendo\styles\Uniform\sprite_kpi.png" />
     <Content Include="kendo\styles\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\review.less" />
+    <Content Include="Content\review.css.map">
+      <DependentUpon>review.css</DependentUpon>
+    </Content>
     <None Include="kendo\vsdoc\kendo.all-vsdoc.js" />
     <None Include="kendo\vsdoc\kendo.all.min.intellisense.js" />
     <None Include="kendo\vsdoc\kendo.dataviz-vsdoc.js" />
