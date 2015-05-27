@@ -19,6 +19,13 @@ var Experiments;
                         }
                     },
                     schema: {
+                        data: function (data) {
+                            // add extra property
+                            $.each(data, function (index, item) {
+                                $.extend(item, { chapterId: chapterId });
+                            });
+                            return data;
+                        },
                         model: Experiments.Models.QuestionsDataSourceItemModel
                     }
                 });

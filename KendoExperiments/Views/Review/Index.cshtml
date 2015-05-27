@@ -50,7 +50,13 @@
 
 <script id="question-item-template" type="text/x-kendo-template">
     <div class="question-item">
-        <span data-bind="text: name"></span>
+        <span data-bind="text: name, events: { click: showQuestionDetails }"></span>
+    </div>
+</script>
+
+<script id="question-details-template" type="text/x-kendo-template">
+    <div>
+        Questions details: <span data-bind="text: name"></span>
     </div>
 </script>
 

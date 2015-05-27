@@ -14,5 +14,11 @@ namespace KendoExperiments.api.Controllers
         {
             return Db.Questions;
         }
+
+        [HttpGet]
+        public object Details([FromUri]int chapterId, [FromUri]int id)
+        {
+            return new { Id = 23233, Name = "Details", CreatedDate = DateTime.UtcNow };
+        }
     }
 }

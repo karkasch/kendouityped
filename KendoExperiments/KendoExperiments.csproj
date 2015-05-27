@@ -1183,6 +1183,7 @@
     <TypeScriptCompile Include="Scripts\review\models\chapters.datasourceitem.model.ts" />
     <TypeScriptCompile Include="Scripts\review\models\questions.datasourceitem.model.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\chapters.viewmodel.ts" />
+    <TypeScriptCompile Include="Scripts\review\viewmodels\question.details.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\questions.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\review.app.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />

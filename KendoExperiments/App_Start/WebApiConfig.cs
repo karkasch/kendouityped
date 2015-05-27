@@ -20,6 +20,12 @@ namespace KendoExperiments
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "QuestionsDetailsApi",
+                routeTemplate: "api/v{version}/chapters/{chapterId}/questions/{id}/details",
+                defaults: new { version = 1, Controller = "Questions", Action = "Details" }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "ChaptersDetailsApi",
                 routeTemplate: "api/v{version}/chapters/{chapterId}/questions/{id}",
                 defaults: new { version = 1, Controller = "Questions", id = RouteParameter.Optional }

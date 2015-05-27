@@ -10,10 +10,18 @@
                     }
                 },
                 schema: {
-                    model: Experiments.Models.QuestionsDataSourceItemModel
+                    data: (data: Array<any>) => {
+
+                        // add extra property
+                        $.each(data,(index, item) => {
+                            $.extend(item, { chapterId: chapterId });
+                        });
+
+                        return data;
+                    },
+                    model: Experiments.Models.QuestionsDataSourceItemModel                    
                 }
             });
         }
     }
-
 } 
