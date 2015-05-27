@@ -14,7 +14,7 @@
 <script id="layout-template" type="text/x-kendo-template">
     <div>
         <div id="chapters-view" class="left-panel"></div>
-        <div id="question-details-view" class="right-panel">13</div>
+        <div id="question-details-view" class="right-panel"></div>
         <div class="cleared"></div>
     </div>
 </script>
@@ -26,12 +26,10 @@
         <div data-role="listview"
                  data-template="chapter-item-template"
                  data-bind="source: chapters" class="chapters-list" ></div>
-
     </div>
 </script>
 
 <script id="chapter-item-template" type="text/x-kendo-template">
-    # console.log('itemmmm', data); #
     <div class="chapter">
         <div class="item-title" data-bind="events: { click: showDetails }">
             <span data-bind="html: name"></span>
@@ -56,7 +54,9 @@
 
 <script id="question-details-template" type="text/x-kendo-template">
     <div>
-        Questions details: <span data-bind="text: name"></span>
+        Questions details ID: <span data-bind="text: questionDetailsModel.id"></span> - <span data-bind="text: questionDetailsModel.name"></span><br />
+        Name: <input type="text" data-bind="value: questionDetailsModel.name" /><br />
+        Date: <span data-bind="text: questionDetailsModel.createdDate"></span>
     </div>
 </script>
 

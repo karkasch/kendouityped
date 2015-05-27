@@ -1,6 +1,6 @@
 ﻿module Experiments.Models {
     export class QuestionDetailsViewModel extends kendo.data.ObservableObject {
-        name: string;
+        questionDetailsModel: QuestionDetailsModel;
 
         constructor(chapterId: number, questionId: number) {
             super();
@@ -9,16 +9,14 @@
                 url: '/api/v1/chapters/' + chapterId + '/questions/' + questionId + '/details',
                 contentType: 'application/json'
             }).done((response) => {
-                //super.init(response);
-
-                //this.init(response);
-
-                this.set('name', response.name);
-
-                //this.trigger(
-
-                console.log('init', this.name);
+                this.set('questionDetailsModel', response);
             });
         }
+    }
+
+    export class QuestionDetailsModel {
+        id: number;
+        name: string;
+        createdDate: Date;
     }
 } 
