@@ -9,14 +9,28 @@ function initApp() {
             layout.render($("#application"));
         },
         routeMissing: function (e) {
-            console.log(e);
             router.navigate("/");
         }
     });
     router.route('/', function () {
+        // chapters
         chaptersViewModel = new Experiments.Models.ChaptersViewModel();
         var chaptersView = new kendo.View('chapters-template', { model: chaptersViewModel });
         layout.showIn('#chapters-view', chaptersView);
+        kendo.fx($("#chapters-view")).slideIn("up").play();
+    });
+    router.route('/chapters/:id', function (id) {
+        // chapters
+        chaptersViewModel = new Experiments.Models.ChaptersViewModel();
+        var chaptersView = new kendo.View('chapters-template', { model: chaptersViewModel });
+        chaptersViewModel.chaptersDataSource.one('change', function (e) {
+            console.log('change', e);
+            var chapter = chaptersViewModel.chaptersDataSource.get(id);
+            chapter.trigger('showQuestons', { data: chapter });
+        });
+        layout.showIn('#chapters-view', chaptersView);
+        kendo.fx($("#chapters-view")).slideIn("up").play();
+        // questions
     });
     router.start();
 }

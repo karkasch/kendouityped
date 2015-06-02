@@ -11,13 +11,25 @@
 
         constructor(value?: any) {
             super(value);
-
-            //this.id = 'id';
-            //this.questionsViewModel = {};
         }
 
-        showDetails(e: any) {
-            console.log('showDetails', e, this);
+        public showQuestons(e: any) {
+            console.log('showDetails', e);
+
+            var questionsViewModel = this.get('questionsViewModel');
+            if (questionsViewModel == null) {
+                questionsViewModel = new Experiments.Models.QuestionsViewModel(e.data.id);
+                this.set('questionsViewModel', questionsViewModel);
+
+                var questionsView = new kendo.View('#questions-template', { model: questionsViewModel });
+                questionsView.render($(e.target).closest('.chapter').find('.questions-panel'));
+            }
+
+            this.set('contentVisible', !this.get('contentVisible'));
+        }
+
+        public showQuestons22(e: any) {
+            console.log('showDetails', e);
 
             var questionsViewModel = this.get('questionsViewModel');
             if (questionsViewModel == null) {

@@ -23,26 +23,25 @@
     <div class="chapters-panel">
         <h2>Chapters</h2>
 
-        <div data-role="listview"
-                 data-template="chapter-item-template"
-                 data-bind="source: chapters" class="chapters-list" ></div>
+        <div data-role="listview" data-template="chapter-item-template" data-bind="source: chaptersDataSource" class="chapters-list"></div>
     </div>
 </script>
 
 <script id="chapter-item-template" type="text/x-kendo-template">
     <div class="chapter">
-        <div class="item-title" data-bind="events: { click: showDetails }">
+        <div class="item-title" data-bind="events: { click: showQuestons }">
             <span data-bind="html: name"></span>
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
             <div class="questions-panel"></div>
+            @*<div data-bind="source: questionsViewModel" data-template="questions-template"></div>*@
         </div>
     </div>
 </script>
 
 <script id="questions-template" type="text/x-kendo-template">
     <div>
-        <div data-role="listview" data-bind="source: questionsDataSource" data-template="question-item-template"></div>
+        <div data-role="listview" data-bind="source: questions" data-template="question-item-template"></div>
     </div>
 </script>
 

@@ -8,15 +8,14 @@ var Experiments;
 (function (Experiments) {
     var Models;
     (function (Models) {
-        var ChaptersViewModel = (function (_super) {
-            __extends(ChaptersViewModel, _super);
-            function ChaptersViewModel(chapterId) {
-                _super.call(this);
-                this.chaptersDataSource = new Experiments.Data.ChaptersDataSource();
+        var QuestionModel = (function (_super) {
+            __extends(QuestionModel, _super);
+            function QuestionModel(value) {
+                _super.call(this, value);
             }
-            return ChaptersViewModel;
+            return QuestionModel;
         })(kendo.data.ObservableObject);
-        Models.ChaptersViewModel = ChaptersViewModel;
+        Models.QuestionModel = QuestionModel;
     })(Models = Experiments.Models || (Experiments.Models = {}));
 })(Experiments || (Experiments = {}));
-//# sourceMappingURL=chapters.viewmodel.js.map
+//# sourceMappingURL=question.model.js.map

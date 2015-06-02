@@ -12,6 +12,14 @@ var Experiments;
             __extends(QuestionsDataSourceItemModel, _super);
             function QuestionsDataSourceItemModel(data) {
                 _super.call(this, data);
+                this.fields = {
+                    id: 'id',
+                    name: { type: 'string' },
+                    value: { type: 'string' }
+                };
+                this.bind('change', function (e) {
+                    console.log('question model change', e);
+                });
             }
             QuestionsDataSourceItemModel.prototype.showQuestionDetails = function (e) {
                 console.log('showQuestionDetails', e);

@@ -1,14 +1,11 @@
 ﻿module Experiments.Models {
     export class ChaptersViewModel extends kendo.data.ObservableObject {
-        chapters: Experiments.Data.ChaptersDataSource;
-        test: string;
+        public chaptersDataSource: Experiments.Data.ChaptersDataSource;
 
-        constructor() {
+        constructor(chapterId?: number) {
             super();
 
-            this.chapters = new Experiments.Data.ChaptersDataSource();
-
-            this.test = '34444';
+            this.chaptersDataSource = new Experiments.Data.ChaptersDataSource();
         }
     }
 } 

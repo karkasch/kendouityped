@@ -36,6 +36,7 @@ namespace KendoExperiments
 
                 "~/scripts/review/models/chapters.datasourceitem.model.js",
                 "~/scripts/review/models/questions.datasourceitem.model.js",
+                "~/scripts/review/models/question.model.js",
                 
                 "~/Scripts/review/viewmodels/chapters.viewmodel.js",
                 "~/Scripts/review/viewmodels/questions.viewmodel.js",

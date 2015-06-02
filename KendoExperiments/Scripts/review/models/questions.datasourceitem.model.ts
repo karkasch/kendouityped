@@ -9,6 +9,15 @@
         constructor(data?: any) {
             super(data);
 
+            this.fields = {
+                id: 'id',
+                name: { type: 'string' },
+                value: { type: 'string' }
+            };
+
+            this.bind('change',(e: any) => {
+                console.log('question model change', e);
+            });
         }
 
         public showQuestionDetails(e: any) {
