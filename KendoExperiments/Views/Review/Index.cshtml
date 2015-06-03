@@ -34,26 +34,33 @@
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
             <div class="questions-panel"></div>
-            @*<div data-bind="source: questionsViewModel" data-template="questions-template"></div>*@
         </div>
     </div>
 </script>
 
 <script id="questions-template" type="text/x-kendo-template">
     <div>
-        <div data-role="listview" data-bind="source: questions" data-template="question-item-template"></div>
+        <div data-role="listview" data-bind="source: questions" data-template="question-template"></div>
+    </div>
+</script>
+
+<script id="question-template" type="text/x-kendo-template">
+    <div class="question-item" data-bind="source: question" data-template="question-item-template">
+        [1]<span data-bind="text: question.name, events: { click: showQuestionDetails }"></span>
     </div>
 </script>
 
 <script id="question-item-template" type="text/x-kendo-template">
     <div class="question-item">
-        <span data-bind="text: name, events: { click: showQuestionDetails }"></span>
+        [2]<span data-bind="text: name, events: { click: showQuestionDetails }"></span>
     </div>
 </script>
 
 <script id="question-details-template" type="text/x-kendo-template">
     <div>
-        Questions details ID: <span data-bind="text: questionDetailsModel.id"></span> - <span data-bind="text: questionDetailsModel.name"></span><br />
+        Questions details ID: <span data-bind="text: chapterId"></span>:<span data-bind="text: question.id"></span> - <span data-bind="text: questionDetailsModel.name"></span><br />
+        Question test name: <input type="text" data-bind="value: questionName, events: { change: updateValues }" /><br />
+        Question NAMe: <input type="text" data-bind="value: question.name" /><br />
         Name: <input type="text" data-bind="value: questionDetailsModel.name" /><br />
         Date: <span data-bind="text: questionDetailsModel.createdDate"></span>
     </div>

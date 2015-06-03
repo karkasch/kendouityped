@@ -31,10 +31,12 @@ var Experiments;
             __extends(QuestionViewModel, _super);
             function QuestionViewModel(chapterId, question) {
                 _super.call(this);
+                this.chapterId = chapterId;
                 this.question = question;
             }
             QuestionViewModel.prototype.showQuestionDetails = function (e) {
-                console.log('showQuestionDetails', e);
+                console.log('showQuestionDetails', e, this);
+                questionDetailsViewModel.initData(this.chapterId, this.question);
                 //var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
                 //var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
                 //layout.showIn('#question-details-view', questionDetailsView);

@@ -3,6 +3,7 @@ var layout: kendo.Layout;
 
 var reviewAppModel;
 var chaptersViewModel: Experiments.Models.ChaptersViewModel;
+var questionDetailsViewModel: Experiments.Models.QuestionDetailsViewModel;
 
 function initApp() {
 
@@ -25,6 +26,14 @@ function initApp() {
         layout.showIn('#chapters-view', chaptersView);
 
         kendo.fx($("#chapters-view")).slideIn("up").play();
+
+        // question details
+        questionDetailsViewModel = new Experiments.Models.QuestionDetailsViewModel();
+        var questionDetailsView = new kendo.View('question-details-template', { model: questionDetailsViewModel });
+        layout.showIn('#question-details-view', questionDetailsView);
+
+        kendo.fx($("#question-details-view")).slideIn("up").play();
+
     });
 
     router.route('/chapters/:id', (id: number) => {

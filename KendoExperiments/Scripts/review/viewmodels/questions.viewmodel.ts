@@ -23,15 +23,20 @@
     }
 
     export class QuestionViewModel extends kendo.data.ObservableObject {
+        chapterId: number;
         question: QuestionModel;
 
         constructor(chapterId: number, question?: QuestionModel) {
             super();
+            this.chapterId = chapterId;
             this.question = question;
         }
 
         public showQuestionDetails(e: any) {
-            console.log('showQuestionDetails', e);
+            console.log('showQuestionDetails', e, this);
+
+            questionDetailsViewModel.initData(this.chapterId, this.question);
+
             //var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
 
             //var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });

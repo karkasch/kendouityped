@@ -21,12 +21,6 @@ var Experiments;
                     console.log('question model change', e);
                 });
             }
-            QuestionsDataSourceItemModel.prototype.showQuestionDetails = function (e) {
-                console.log('showQuestionDetails', e);
-                var questionDetailsViewModel = new Models.QuestionDetailsViewModel(this.chapterId, this.id);
-                var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
-                layout.showIn('#question-details-view', questionDetailsView);
-            };
             return QuestionsDataSourceItemModel;
         })(kendo.data.Model);
         Models.QuestionsDataSourceItemModel = QuestionsDataSourceItemModel;

@@ -20,13 +20,13 @@
             });
         }
 
-        public showQuestionDetails(e: any) {
-            console.log('showQuestionDetails', e);
-            var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
+        //public showQuestionDetails(e: any) {
+        //    console.log('showQuestionDetails', e);
+        //    var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
 
-            var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
+        //    var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
 
-            layout.showIn('#question-details-view', questionDetailsView);
-        }
+        //    layout.showIn('#question-details-view', questionDetailsView);
+        //}
     }
 } 
