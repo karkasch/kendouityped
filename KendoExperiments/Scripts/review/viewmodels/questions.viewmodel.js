@@ -13,37 +13,24 @@ var Experiments;
             function QuestionsViewModel(chapterId) {
                 var _this = this;
                 _super.call(this);
-                //this.questionsDataSource = new Experiments.Data.QuestionsDataSource(chapterId);
+                var x = 83;
                 this.questions = new kendo.data.ObservableArray([]);
                 $.ajax({
                     url: '/api/v1/chapters/' + chapterId + '/questions/',
                     contentType: 'application/json'
                 }).done(function (response) {
                     $.each(response, function (index, item) {
-                        _this.questions.push(new QuestionViewModel(chapterId, new Models.QuestionModel(item)));
+                        var questionModel = Models.QuestionModel.createInstance(item);
+                        var questionViewModel = Models.QuestionViewModel.createInstance(chapterId, questionModel);
+                        var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionModel });
+                        questionView.render($('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel'));
+                        _this.questions.push(QuestionsViewModel);
                     });
                 });
             }
             return QuestionsViewModel;
         })(kendo.data.ObservableObject);
         Models.QuestionsViewModel = QuestionsViewModel;
-        var QuestionViewModel = (function (_super) {
-            __extends(QuestionViewModel, _super);
-            function QuestionViewModel(chapterId, question) {
-                _super.call(this);
-                this.chapterId = chapterId;
-                this.question = question;
-            }
-            QuestionViewModel.prototype.showQuestionDetails = function (e) {
-                console.log('showQuestionDetails', e, this);
-                questionDetailsViewModel.initData(this.chapterId, this.question);
-                //var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
-                //var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
-                //layout.showIn('#question-details-view', questionDetailsView);
-            };
-            return QuestionViewModel;
-        })(kendo.data.ObservableObject);
-        Models.QuestionViewModel = QuestionViewModel;
     })(Models = Experiments.Models || (Experiments.Models = {}));
 })(Experiments || (Experiments = {}));
 //# sourceMappingURL=questions.viewmodel.js.map

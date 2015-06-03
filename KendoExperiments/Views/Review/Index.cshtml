@@ -28,7 +28,7 @@
 </script>
 
 <script id="chapter-item-template" type="text/x-kendo-template">
-    <div class="chapter">
+    <div class="chapter" data-chapterid="#= id #">
         <div class="item-title" data-bind="events: { click: showQuestons }">
             <span data-bind="html: name"></span>
         </div>
@@ -46,7 +46,7 @@
 
 <script id="question-template" type="text/x-kendo-template">
     <div class="question-item" data-bind="source: question" data-template="question-item-template">
-        [1]<span data-bind="text: question.name, events: { click: showQuestionDetails }"></span>
+        @*[1]<span data-bind="text: question.name, events: { click: showQuestionDetails }"></span>*@
     </div>
 </script>
 
