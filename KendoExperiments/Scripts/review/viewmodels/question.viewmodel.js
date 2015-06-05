@@ -13,6 +13,7 @@ var Experiments;
             function QuestionViewModel(chapterId, question) {
                 var _this = this;
                 _super.call(this);
+                this.hasFinding = false;
                 this.chapterId = chapterId;
                 this.question = question;
                 this.answer = question.answer;
@@ -24,6 +25,9 @@ var Experiments;
                 console.log('showQuestionDetails', e, this);
                 //if (questionDetailsViewModel.question != null && questionDetailsViewModel.question.id != this.question.id)
                 questionDetailsViewModel.initData(this.chapterId, this.question);
+            };
+            QuestionViewModel.prototype.createFinding = function () {
+                this.set('hasFinding', true);
             };
             QuestionViewModel.createInstance = function (chapterId, question) {
                 if (question.questionType == "T")

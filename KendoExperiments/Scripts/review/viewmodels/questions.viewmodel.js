@@ -29,6 +29,13 @@ var Experiments;
                     });
                 });
             }
+            QuestionsViewModel.prototype.getQuestionViewModel = function (questionId) {
+                for (var i = 0; i < this.questions.length; i++) {
+                    if (this.questions[i].question.id == questionId)
+                        return this.questions[i];
+                }
+                return null;
+            };
             return QuestionsViewModel;
         })(kendo.data.ObservableObject);
         Models.QuestionsViewModel = QuestionsViewModel;

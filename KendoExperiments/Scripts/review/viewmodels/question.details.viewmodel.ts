@@ -2,15 +2,16 @@
     export class QuestionDetailsViewModel extends kendo.data.ObservableObject {
         chapterId: number;
         question: QuestionModel;
-        questionDetailsModel: QuestionDetailsModel;
-        questionName: string = 'tes trr';
+        questionFindingsViewModel: QuestionFindingsViewModel;
 
         constructor() {
             super();
+
+            this.questionFindingsViewModel = new QuestionFindingsViewModel();
         
             this.bind('change', (e: any) => {
-                if (e.field == 'questionName')
-                    this.question.set('name', this.questionName);
+                //if (e.field == 'questionName')
+                    //this.question.set('name', this.questionName);
             });    
         }
 
@@ -18,12 +19,7 @@
             this.set('chapterId', chapterId);
             this.set('question', question);
 
-            $.ajax({
-                url: '/api/v1/chapters/' + chapterId + '/questions/' + question.id + '/details',
-                contentType: 'application/json'
-            }).done((response) => {
-                this.set('questionDetailsModel', response);
-            });
+            this.set('questionFindingsViewModel', new QuestionFindingsViewModel(chapterId, question.id));
         }
 
         public updateValues(e: any) {

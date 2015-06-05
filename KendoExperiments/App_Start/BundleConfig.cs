@@ -41,7 +41,9 @@ namespace KendoExperiments
                 "~/Scripts/review/viewmodels/chapters.viewmodel.js",
                 "~/Scripts/review/viewmodels/questions.viewmodel.js",
                 "~/Scripts/review/viewmodels/question.viewmodel.js",
+
                 "~/Scripts/review/viewmodels/question.details.viewmodel.js",
+                "~/Scripts/review/viewmodels/question.findings.viewmodel.js",
                 
                 "~/Scripts/review/review.app.js"));
 

@@ -40,6 +40,11 @@ function initApp() {
     });
     router.start();
 }
+function createFinding(chapterId, questionId) {
+    var chapter = chaptersViewModel.chaptersDataSource.get(chapterId);
+    var questionViewModel = chapter.questionsViewModel.getQuestionViewModel(questionId);
+    questionViewModel.createFinding();
+}
 $(document).ready(function (e) {
     initApp();
 });

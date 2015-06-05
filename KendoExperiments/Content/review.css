@@ -65,4 +65,11 @@ footer {
   padding: 10px;
   border-bottom: 1px solid #f0f0f0;
 }
+.questions-panel .question-item .finding-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+}
 /*# sourceMappingURL=review.css.map */

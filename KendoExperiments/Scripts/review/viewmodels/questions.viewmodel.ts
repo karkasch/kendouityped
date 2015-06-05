@@ -29,6 +29,16 @@
                 });
             });
         }
+
+        public getQuestionViewModel(questionId: number): QuestionViewModel {
+            
+            for (var i = 0; i < this.questions.length; i++) {
+                if (this.questions[i].question.id == questionId)
+                    return this.questions[i];
+            }
+
+            return null;
+        }
     }
 
 } 

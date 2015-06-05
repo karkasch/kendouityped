@@ -11,24 +11,17 @@ var Experiments;
         var QuestionDetailsViewModel = (function (_super) {
             __extends(QuestionDetailsViewModel, _super);
             function QuestionDetailsViewModel() {
-                var _this = this;
                 _super.call(this);
-                this.questionName = 'tes trr';
+                this.questionFindingsViewModel = new Models.QuestionFindingsViewModel();
                 this.bind('change', function (e) {
-                    if (e.field == 'questionName')
-                        _this.question.set('name', _this.questionName);
+                    //if (e.field == 'questionName')
+                    //this.question.set('name', this.questionName);
                 });
             }
             QuestionDetailsViewModel.prototype.initData = function (chapterId, question) {
-                var _this = this;
                 this.set('chapterId', chapterId);
                 this.set('question', question);
-                $.ajax({
-                    url: '/api/v1/chapters/' + chapterId + '/questions/' + question.id + '/details',
-                    contentType: 'application/json'
-                }).done(function (response) {
-                    _this.set('questionDetailsModel', response);
-                });
+                this.set('questionFindingsViewModel', new Models.QuestionFindingsViewModel(chapterId, question.id));
             };
             QuestionDetailsViewModel.prototype.updateValues = function (e) {
                 console.log('updateValues', e, this);

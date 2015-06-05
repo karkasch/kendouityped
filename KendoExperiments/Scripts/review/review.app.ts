@@ -61,6 +61,13 @@ function initApp() {
     router.start();
 }
 
+function createFinding(chapterId: number, questionId: number) {
+    var chapter = <Experiments.Models.ChapterDataSourceItemModel>chaptersViewModel.chaptersDataSource.get(chapterId);
+
+    var questionViewModel = chapter.questionsViewModel.getQuestionViewModel(questionId);
+    questionViewModel.createFinding();
+}
+
 $(document).ready((e) => {
     initApp();
 });

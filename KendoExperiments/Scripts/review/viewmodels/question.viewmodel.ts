@@ -6,6 +6,8 @@
         viewTemplate: string;
         answer: any;
 
+        hasFinding: boolean = false;
+
         constructor(chapterId: number, question?: QuestionModel) {
             super();
             this.chapterId = chapterId;
@@ -23,6 +25,10 @@
             //if (questionDetailsViewModel.question != null && questionDetailsViewModel.question.id != this.question.id)
                 questionDetailsViewModel.initData(this.chapterId, this.question);
 
+        }
+
+        public createFinding() {
+            this.set('hasFinding', true);
         }
 
         static createInstance(chapterId: number, question: QuestionModel): QuestionViewModel {

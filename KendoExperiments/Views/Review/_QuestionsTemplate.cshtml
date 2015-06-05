@@ -2,7 +2,7 @@
 
 <script id="question-text-template" type="text/x-kendo-template">
     <div class="question-item" data-bind="events: { click: showQuestionDetails }">
-        <div>[T] <span data-bind="text: question.name"></span></div>
+        <div>[T] <span data-bind="visible: hasFinding" class="finding-icon"></span> <span data-bind="text: question.name"></span></div>
         <div>
             <input type="text" data-bind="value: answer, events: { focus: showQuestionDetails }" class="k-textbox" />
         </div>

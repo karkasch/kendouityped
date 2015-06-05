@@ -8,24 +8,34 @@
         <ul data-role="panelbar">
             <li>
                 <span>Findings</span>
-                <div>
-
-                </div>
+                <div data-bind="source: questionFindingsViewModel" data-template="question-findings-template"></div>
             </li>
             <li>
                 <span>Explanation</span>
                 <div>
-
+                    E
                 </div>
             </li>
             <li>
                 <span>History</span>
                 <div>
-
+                    H
                 </div>
             </li>
         </ul>
     </div>
+</script>
+
+<script id="question-findings-template" type="text/x-kendo-template">
+    <div>
+        Findings <button data-bind="events: { click: createFinding }">Create finding</button>
+    </div>
+</script>
+
+<script id="question-explain-template" type="text/x-kendo-template">
+</script>
+
+<script id="question-history-template" type="text/x-kendo-template">
 </script>
 
 
