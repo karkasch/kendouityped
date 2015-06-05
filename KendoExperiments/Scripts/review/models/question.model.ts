@@ -4,6 +4,8 @@
         id: number;
         name: string;
         questionType: string;
+        availableList: string;
+        answer: string;
 
         constructor(value?: any) {
             super(value);

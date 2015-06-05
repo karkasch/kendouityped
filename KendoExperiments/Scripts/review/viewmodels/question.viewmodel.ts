@@ -4,23 +4,25 @@
         chapterId: number;
         question: QuestionModel;
         viewTemplate: string;
+        answer: any;
 
         constructor(chapterId: number, question?: QuestionModel) {
             super();
             this.chapterId = chapterId;
             this.question = question;
+            this.answer = question.answer;
+
+            this.bind('change',(e) => {
+                this.question.set('answer', this.answer);
+            });
         }
 
         public showQuestionDetails(e: any) {
             console.log('showQuestionDetails', e, this);
 
-            questionDetailsViewModel.initData(this.chapterId, this.question);
+            //if (questionDetailsViewModel.question != null && questionDetailsViewModel.question.id != this.question.id)
+                questionDetailsViewModel.initData(this.chapterId, this.question);
 
-            //var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
-
-            //var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
-
-            //layout.showIn('#question-details-view', questionDetailsView);
         }
 
         static createInstance(chapterId: number, question: QuestionModel): QuestionViewModel {
@@ -40,19 +42,16 @@
             super(chapterId, question);
             this.viewTemplate = 'question-text-template';
         }
-
-        public test(e: any) {
-            console.log('showQuestionDetails L', e, this);
-            super.showQuestionDetails(e);
-        }
     }
 
     export class QuestionListViewModel extends QuestionViewModel {
-        answer: Array<string>;
+        availableList: Array<string>;
 
         constructor(chapterId: number, question?: QuestionModel) {
             super(chapterId, question);
             this.viewTemplate = 'question-list-template';
+
+            this.availableList = question.availableList.split('\n');
         }
     }
 } 

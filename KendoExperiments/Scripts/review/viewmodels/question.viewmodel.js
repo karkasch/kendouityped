@@ -11,16 +11,19 @@ var Experiments;
         var QuestionViewModel = (function (_super) {
             __extends(QuestionViewModel, _super);
             function QuestionViewModel(chapterId, question) {
+                var _this = this;
                 _super.call(this);
                 this.chapterId = chapterId;
                 this.question = question;
+                this.answer = question.answer;
+                this.bind('change', function (e) {
+                    _this.question.set('answer', _this.answer);
+                });
             }
             QuestionViewModel.prototype.showQuestionDetails = function (e) {
                 console.log('showQuestionDetails', e, this);
+                //if (questionDetailsViewModel.question != null && questionDetailsViewModel.question.id != this.question.id)
                 questionDetailsViewModel.initData(this.chapterId, this.question);
-                //var questionDetailsViewModel = new QuestionDetailsViewModel(this.chapterId, this.id);
-                //var questionDetailsView = new kendo.View('#question-details-template', { model: questionDetailsViewModel });
-                //layout.showIn('#question-details-view', questionDetailsView);
             };
             QuestionViewModel.createInstance = function (chapterId, question) {
                 if (question.questionType == "T")
@@ -38,10 +41,6 @@ var Experiments;
                 _super.call(this, chapterId, question);
                 this.viewTemplate = 'question-text-template';
             }
-            QuestionTextViewModel.prototype.test = function (e) {
-                console.log('showQuestionDetails L', e, this);
-                _super.prototype.showQuestionDetails.call(this, e);
-            };
             return QuestionTextViewModel;
         })(QuestionViewModel);
         Models.QuestionTextViewModel = QuestionTextViewModel;
@@ -50,6 +49,7 @@ var Experiments;
             function QuestionListViewModel(chapterId, question) {
                 _super.call(this, chapterId, question);
                 this.viewTemplate = 'question-list-template';
+                this.availableList = question.availableList.split('\n');
             }
             return QuestionListViewModel;
         })(QuestionViewModel);
