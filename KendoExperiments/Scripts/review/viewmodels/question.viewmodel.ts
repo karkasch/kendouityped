@@ -23,7 +23,7 @@
             //layout.showIn('#question-details-view', questionDetailsView);
         }
 
-        static createInstance(chapterId: number, question: QuestionModel) {
+        static createInstance(chapterId: number, question: QuestionModel): QuestionViewModel {
             if (question.questionType == "T")
                 return new QuestionTextViewModel(chapterId, question);
 
@@ -39,6 +39,11 @@
         constructor(chapterId: number, question?: QuestionModel) {
             super(chapterId, question);
             this.viewTemplate = 'question-text-template';
+        }
+
+        public test(e: any) {
+            console.log('showQuestionDetails L', e, this);
+            super.showQuestionDetails(e);
         }
     }
 

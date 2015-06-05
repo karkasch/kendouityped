@@ -29,12 +29,24 @@
 
 <script id="chapter-item-template" type="text/x-kendo-template">
     <div class="chapter" data-chapterid="#= id #">
-        <div class="item-title" data-bind="events: { click: showQuestons }">
+        <div class="item-title" data-bind="events: { click: showQuestions }">
             <span data-bind="html: name"></span>
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
             <div class="questions-panel"></div>
         </div>
+    </div>
+</script>
+
+<script id="question-text-template" type="text/x-kendo-template">
+    <div class="question-item">
+        [T]<span data-bind="text: question.name, events: { click: showQuestionDetails }"></span>
+    </div>
+</script>
+
+<script id="question-list-template" type="text/x-kendo-template">
+    <div class="question-item">
+        [L]<span data-bind="text: question.name, events: { click: showQuestionDetails }"></span>
     </div>
 </script>
 

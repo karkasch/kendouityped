@@ -13,25 +13,12 @@ var Experiments;
             function ChapterDataSourceItemModel(value) {
                 _super.call(this, value);
             }
-            ChapterDataSourceItemModel.prototype.showQuestons = function (e) {
+            ChapterDataSourceItemModel.prototype.showQuestions = function (e) {
                 console.log('showDetails', e);
                 var questionsViewModel = this.get('questionsViewModel');
                 if (questionsViewModel == null) {
                     questionsViewModel = new Experiments.Models.QuestionsViewModel(e.data.id);
                     this.set('questionsViewModel', questionsViewModel);
-                    var questionsView = new kendo.View('#questions-template', { model: questionsViewModel });
-                    questionsView.render($(e.target).closest('.chapter').find('.questions-panel'));
-                }
-                this.set('contentVisible', !this.get('contentVisible'));
-            };
-            ChapterDataSourceItemModel.prototype.showQuestons22 = function (e) {
-                console.log('showDetails', e);
-                var questionsViewModel = this.get('questionsViewModel');
-                if (questionsViewModel == null) {
-                    questionsViewModel = new Experiments.Models.QuestionsViewModel(e.data.id);
-                    this.set('questionsViewModel', questionsViewModel);
-                    var questionsView = new kendo.View('#questions-template', { model: questionsViewModel });
-                    questionsView.render($(e.target).closest('.chapter').find('.questions-panel'));
                 }
                 this.set('contentVisible', !this.get('contentVisible'));
             };

@@ -10,5 +10,6 @@ namespace KendoExperiments.api.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Order { get; set; }
+        public string QuestionType { get; set; }
     }
 }

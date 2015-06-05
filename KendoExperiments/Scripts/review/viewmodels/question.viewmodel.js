@@ -38,6 +38,10 @@ var Experiments;
                 _super.call(this, chapterId, question);
                 this.viewTemplate = 'question-text-template';
             }
+            QuestionTextViewModel.prototype.test = function (e) {
+                console.log('showQuestionDetails L', e, this);
+                _super.prototype.showQuestionDetails.call(this, e);
+            };
             return QuestionTextViewModel;
         })(QuestionViewModel);
         Models.QuestionTextViewModel = QuestionTextViewModel;

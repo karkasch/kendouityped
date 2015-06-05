@@ -14,7 +14,8 @@ var Experiments;
                 var _this = this;
                 _super.call(this);
                 var x = 83;
-                this.questions = new kendo.data.ObservableArray([]);
+                //this.questions = new kendo.data.ObservableArray([]);
+                this.questions = [];
                 $.ajax({
                     url: '/api/v1/chapters/' + chapterId + '/questions/',
                     contentType: 'application/json'
@@ -22,9 +23,9 @@ var Experiments;
                     $.each(response, function (index, item) {
                         var questionModel = Models.QuestionModel.createInstance(item);
                         var questionViewModel = Models.QuestionViewModel.createInstance(chapterId, questionModel);
-                        var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionModel });
+                        var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
                         questionView.render($('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel'));
-                        _this.questions.push(QuestionsViewModel);
+                        _this.questions.push(questionViewModel);
                     });
                 });
             }

@@ -27,10 +27,10 @@ namespace KendoExperiments.api
 
             Questions = new List<QuestionModel>()
             {
-                new QuestionModel() { Id = 1, Name = "Age?", Order = 1 },
-                new QuestionModel() { Id = 2, Name = "Name?", Order = 2 },
-                new QuestionModel() { Id = 3, Name = "Engine date", Order = 3 },
-                new QuestionModel() { Id = 4, Name = "Yes/No", Order = 4 },
+                new QuestionModel() { Id = 1, Name = "Age?", Order = 1, QuestionType = "T" },
+                new QuestionModel() { Id = 2, Name = "Name?", Order = 2, QuestionType = "T" },
+                new QuestionModel() { Id = 3, Name = "Engine date", Order = 3, QuestionType = "T" },
+                new QuestionModel() { Id = 4, Name = "Yes/No", Order = 4, QuestionType = "L" },
             };
         }
 
