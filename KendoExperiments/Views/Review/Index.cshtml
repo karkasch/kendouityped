@@ -1,15 +1,12 @@
 ﻿@model KendoExperiments.Models.BasicModel
 
-@{
-    ViewBag.Title = "SPA";
-}
-
 @section head {
     @Styles.Render("~/Content/review")
+    @Styles.Render("~/kendo/styles/kendo.common.min.css")
+    @Styles.Render("~/kendo/styles/kendo.material.min.css")
 }
 
 <div id="application"></div>
-
 
 <script id="layout-template" type="text/x-kendo-template">
     <div>
@@ -19,70 +16,9 @@
     </div>
 </script>
 
-<script id="chapters-template" type="text/x-kendo-template">
-    <div class="chapters-panel">
-        <h2>Chapters</h2>
-
-        <div data-role="listview" data-template="chapter-item-template" data-bind="source: chaptersDataSource" class="chapters-list"></div>
-    </div>
-</script>
-
-<script id="chapter-item-template" type="text/x-kendo-template">
-    <div class="chapter" data-chapterid="#= id #">
-        <div class="item-title" data-bind="events: { click: showQuestions }">
-            <span data-bind="html: name"></span>
-        </div>
-        <div class="item-content" data-bind="visible: contentVisible">
-            <div class="questions-panel"></div>
-        </div>
-    </div>
-</script>
-
-<script id="question-text-template" type="text/x-kendo-template">
-    <div class="question-item" data-bind="events: { click: showQuestionDetails }">
-        <div>[T] <span data-bind="text: question.name"></span></div>
-        <div>
-            <input type="text" data-bind="value: answer, events: { focus: showQuestionDetails }" class="k-textbox" />
-        </div>
-    </div>
-</script>
-
-<script id="question-list-template" type="text/x-kendo-template">
-    <div class="question-item" data-bind="events: { click: showQuestionDetails }">
-        <div>[L] <span data-bind="text: question.name"></span></div>
-        <div>
-            <select data-bind="value: answer, source: availableList, events: { focus: showQuestionDetails }"></select>
-        </div>
-    </div>
-</script>
-
-<script id="questions-template" type="text/x-kendo-template">
-    <div>
-        <div data-role="listview" data-bind="source: questions" data-template="question-template"></div>
-    </div>
-</script>
-
-<script id="question-template" type="text/x-kendo-template">
-    <div class="question-item" data-bind="source: question" data-template="question-item-template">
-    </div>
-</script>
-
-<script id="question-item-template" type="text/x-kendo-template">
-    <div class="question-item">
-        [2]<span data-bind="text: name, events: { click: showQuestionDetails }"></span>
-    </div>
-</script>
-
-<script id="question-details-template" type="text/x-kendo-template">
-    <div>
-        Current answer: <span data-bind="html: question.answer"></span><br />
-        Questions details ID: <span data-bind="text: chapterId"></span>:<span data-bind="text: question.id"></span> - <span data-bind="text: questionDetailsModel.name"></span><br />
-        Question test name: <input type="text" data-bind="value: questionName, events: { change: updateValues }" /><br />
-        Question NAMe: <input type="text" data-bind="value: question.name" /><br />
-        Name: <input type="text" data-bind="value: questionDetailsModel.name" /><br />
-        Date: <span data-bind="text: questionDetailsModel.createdDate"></span>
-    </div>
-</script>
+@{ Html.RenderPartial("_ChaptersTemplate", Model); }
+@{ Html.RenderPartial("_QuestionsTemplate", Model); }
+@{ Html.RenderPartial("_QuestionDetailsTemplate", Model); }
 
 @section scripts {
     <script src="~/kendo/js/kendo.all.min.js"></script>

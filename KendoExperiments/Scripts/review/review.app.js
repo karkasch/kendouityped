@@ -1,6 +1,6 @@
 var router;
 var layout;
-var reviewAppModel;
+//var reviewAppModel;
 var chaptersViewModel;
 var questionDetailsViewModel;
 function initApp() {

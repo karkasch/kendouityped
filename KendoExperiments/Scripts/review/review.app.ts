@@ -1,7 +1,7 @@
 ﻿var router: kendo.Router;
 var layout: kendo.Layout;
 
-var reviewAppModel;
+//var reviewAppModel;
 var chaptersViewModel: Experiments.Models.ChaptersViewModel;
 var questionDetailsViewModel: Experiments.Models.QuestionDetailsViewModel;
 

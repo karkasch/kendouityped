@@ -1,0 +1,22 @@
+﻿@model KendoExperiments.Models.BasicModel
+
+<script id="chapters-template" type="text/x-kendo-template">
+    <div class="chapters-panel">
+        <h2>Chapters</h2>
+
+        <div data-role="listview" data-template="chapter-item-template" data-bind="source: chaptersDataSource" class="chapters-list"></div>
+    </div>
+</script>
+
+<script id="chapter-item-template" type="text/x-kendo-template">
+    <div class="chapter" data-chapterid="#= id #">
+        <div class="item-title" data-bind="events: { click: showQuestions }">
+            <span data-bind="html: name"></span>
+        </div>
+        <div class="item-content" data-bind="visible: contentVisible">
+            <div class="questions-panel"></div>
+        </div>
+    </div>
+</script>
+
+

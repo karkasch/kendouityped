@@ -1,5 +1,6 @@
 ﻿@footer-height: 30px;
 @active-color: #35719f;
+@color-border: #f0f0f0;
 
 body {
     font-family: Gadugi;
@@ -57,20 +58,35 @@ footer {
 }
 
 .chapters-panel {
-    background-color: #f0f0f0;
     padding: 10px;
+
+    .chapter {
+        border-bottom: 1px solid @color-border;
+
+        .item-title {
+            font-weight: bold;
+            padding: 5px 0 5px 10px;
+        }
+
+        .item-title:hover {
+            cursor: pointer;
+            background-color: @active-color;
+            color: white;
+        }
+
+        .item-content {
+
+        }
+    }
 }
 
-.item-title:hover {
-    cursor: pointer;
-    background-color: @active-color;
-    color: white;
-}
+
 
 .questions-panel {
-    background-color: #f9f9f9;
 
     .question-item {
-        border-bottom: solid 1px #cfcfcf;
+        padding: 10px;
+
+        border-bottom: 1px solid @color-border;
     }
 }

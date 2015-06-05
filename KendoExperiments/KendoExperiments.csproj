@@ -1162,6 +1162,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Contracts\Index.cshtml" />
     <Content Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Review\_ChaptersTemplate.cshtml" />
+    <Content Include="Views\Review\_QuestionsTemplate.cshtml" />
+    <Content Include="Views\Review\_QuestionDetailsTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

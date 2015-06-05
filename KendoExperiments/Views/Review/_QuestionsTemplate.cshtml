@@ -1,0 +1,22 @@
+﻿@model KendoExperiments.Models.BasicModel
+
+<script id="question-text-template" type="text/x-kendo-template">
+    <div class="question-item" data-bind="events: { click: showQuestionDetails }">
+        <div>[T] <span data-bind="text: question.name"></span></div>
+        <div>
+            <input type="text" data-bind="value: answer, events: { focus: showQuestionDetails }" class="k-textbox" />
+        </div>
+    </div>
+</script>
+
+<script id="question-list-template" type="text/x-kendo-template">
+    <div class="question-item" data-bind="events: { click: showQuestionDetails }">
+        <div>[L] <span data-bind="text: question.name"></span></div>
+        <div>
+            <select data-role="dropdownlist" data-bind="value: answer, source: availableList, events: { focus: showQuestionDetails }"></select>
+        </div>
+    </div>
+</script>
+
+
+

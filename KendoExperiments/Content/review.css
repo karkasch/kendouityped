@@ -47,18 +47,22 @@ footer {
   margin-top: 10px;
 }
 .chapters-panel {
-  background-color: #f0f0f0;
   padding: 10px;
 }
-.item-title:hover {
+.chapters-panel .chapter {
+  border-bottom: 1px solid #f0f0f0;
+}
+.chapters-panel .chapter .item-title {
+  font-weight: bold;
+  padding: 5px 0 5px 10px;
+}
+.chapters-panel .chapter .item-title:hover {
   cursor: pointer;
   background-color: #35719f;
   color: white;
 }
-.questions-panel {
-  background-color: #f9f9f9;
-}
 .questions-panel .question-item {
-  border-bottom: solid 1px #cfcfcf;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
 }
 /*# sourceMappingURL=review.css.map */
