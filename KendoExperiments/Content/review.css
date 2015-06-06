@@ -72,4 +72,7 @@ footer {
   border-radius: 50%;
   background-color: red;
 }
+.question-details .findings-panel {
+  padding: 15px;
+}
 /*# sourceMappingURL=review.css.map */

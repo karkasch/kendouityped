@@ -13,8 +13,6 @@ var Experiments;
             function QuestionsViewModel(chapterId) {
                 var _this = this;
                 _super.call(this);
-                var x = 83;
-                //this.questions = new kendo.data.ObservableArray([]);
                 this.questions = [];
                 $.ajax({
                     url: '/api/v1/chapters/' + chapterId + '/questions/',

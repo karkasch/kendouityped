@@ -22,13 +22,14 @@
         public showQuestionDetails(e: any) {
             console.log('showQuestionDetails', e, this);
 
-            //if (questionDetailsViewModel.question != null && questionDetailsViewModel.question.id != this.question.id)
+            if (questionDetailsViewModel.question == null || questionDetailsViewModel.question.id != this.question.id)
                 questionDetailsViewModel.initData(this.chapterId, this.question);
 
+            router.navigate('/chapters/' + this.chapterId + '/questions/' + this.question.id, true);
         }
 
         public createFinding() {
-            this.set('hasFinding', true);
+            this.set('hasFinding', !this.get('hasFinding'));
         }
 
         static createInstance(chapterId: number, question: QuestionModel): QuestionViewModel {

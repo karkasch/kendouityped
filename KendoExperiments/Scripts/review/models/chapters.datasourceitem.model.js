@@ -17,10 +17,12 @@ var Experiments;
                 console.log('showDetails', e);
                 var questionsViewModel = this.get('questionsViewModel');
                 if (questionsViewModel == null) {
-                    questionsViewModel = new Experiments.Models.QuestionsViewModel(e.data.id);
+                    questionsViewModel = new Experiments.Models.QuestionsViewModel(this.id); //e.data.id);
                     this.set('questionsViewModel', questionsViewModel);
                 }
                 this.set('contentVisible', !this.get('contentVisible'));
+                kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
+                router.navigate('/chapters/' + this.id, true);
             };
             return ChapterDataSourceItemModel;
         })(kendo.data.Model);

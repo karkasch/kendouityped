@@ -1,15 +1,10 @@
 ﻿module Experiments.Models {
     export class QuestionsViewModel extends kendo.data.ObservableObject {
-        //questionsDataSource: Experiments.Data.QuestionsDataSource;
-        //questions: kendo.data.ObservableArray;
         questions: Array<QuestionViewModel>;
 
         constructor(chapterId: number) {
             super();
 
-            var x = 83;
-
-            //this.questions = new kendo.data.ObservableArray([]);
             this.questions = [];
 
             $.ajax({
@@ -40,5 +35,4 @@
             return null;
         }
     }
-
 } 

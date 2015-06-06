@@ -1,7 +1,7 @@
 ﻿@model KendoExperiments.Models.BasicModel
 
 <script id="question-details-template" type="text/x-kendo-template">
-    <div>
+    <div class="question-details">
         Question: <span data-bind="text: question.name" /><br />
         Current answer: <span data-bind="text: question.answer"></span><br />
         <br />
@@ -27,7 +27,7 @@
 </script>
 
 <script id="question-findings-template" type="text/x-kendo-template">
-    <div>
+    <div class="findings-panel">
         Findings <button data-bind="events: { click: createFinding }">Create finding</button>
     </div>
 </script>
