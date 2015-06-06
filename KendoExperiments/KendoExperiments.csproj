@@ -1125,6 +1125,33 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\review\data\chapters.datasource.js">
+      <DependentUpon>chapters.datasource.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\models\chapters.datasourceitem.model.js">
+      <DependentUpon>chapters.datasourceitem.model.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\models\question.model.js">
+      <DependentUpon>question.model.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\review.app.js">
+      <DependentUpon>review.app.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\chapters.viewmodel.js">
+      <DependentUpon>chapters.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\question.details.viewmodel.js">
+      <DependentUpon>question.details.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\question.findings.viewmodel.js">
+      <DependentUpon>question.findings.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\question.viewmodel.js">
+      <DependentUpon>question.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\questions.viewmodel.js">
+      <DependentUpon>questions.viewmodel.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1165,11 +1192,37 @@
     <Content Include="Views\Review\_ChaptersTemplate.cshtml" />
     <Content Include="Views\Review\_QuestionsTemplate.cshtml" />
     <Content Include="Views\Review\_QuestionDetailsTemplate.cshtml" />
+    <Content Include="Scripts\review\data\chapters.datasource.js.map">
+      <DependentUpon>chapters.datasource.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\models\chapters.datasourceitem.model.js.map">
+      <DependentUpon>chapters.datasourceitem.model.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\models\question.model.js.map">
+      <DependentUpon>question.model.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\review.app.js.map">
+      <DependentUpon>review.app.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\chapters.viewmodel.js.map">
+      <DependentUpon>chapters.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\question.details.viewmodel.js.map">
+      <DependentUpon>question.details.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\question.findings.viewmodel.js.map">
+      <DependentUpon>question.findings.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\question.viewmodel.js.map">
+      <DependentUpon>question.viewmodel.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\review\viewmodels\questions.viewmodel.js.map">
+      <DependentUpon>questions.viewmodel.ts</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\contractsapp\data\" />
-    <Folder Include="Scripts\review\NewFolder1\" />
     <Folder Include="v8\" />
   </ItemGroup>
   <ItemGroup>
@@ -1183,11 +1236,8 @@
     <TypeScriptCompile Include="kendo\typescript\kendo.all.d.ts" />
     <TypeScriptCompile Include="Scripts\contractsapp\models\contracts.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\data\chapters.datasource.ts" />
-    <TypeScriptCompile Include="Scripts\review\data\questions.datasource.ts" />
-    <TypeScriptCompile Include="Scripts\review\gears.ts" />
     <TypeScriptCompile Include="Scripts\review\models\chapters.datasourceitem.model.ts" />
     <TypeScriptCompile Include="Scripts\review\models\question.model.ts" />
-    <TypeScriptCompile Include="Scripts\review\models\questions.datasourceitem.model.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\chapters.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\question.details.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\question.findings.viewmodel.ts" />
