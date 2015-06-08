@@ -10,18 +10,18 @@ var Experiments;
     (function (Models) {
         var QuestionDetailsViewModel = (function (_super) {
             __extends(QuestionDetailsViewModel, _super);
-            function QuestionDetailsViewModel() {
+            function QuestionDetailsViewModel(chapterId, questionId) {
                 _super.call(this);
-                this.questionFindingsViewModel = new Models.QuestionFindingsViewModel();
-                this.bind('change', function (e) {
-                    //if (e.field == 'questionName')
-                    //this.question.set('name', this.questionName);
-                });
+                if (chapterId != null && questionId != null)
+                    this.showCurrent(chapterId, questionId);
+                else {
+                    this.questionFindingsViewModel = new Models.QuestionFindingsViewModel();
+                }
             }
-            QuestionDetailsViewModel.prototype.initData = function (chapterId, question) {
+            QuestionDetailsViewModel.prototype.showCurrent = function (chapterId, questionId) {
                 this.set('chapterId', chapterId);
-                this.set('question', question);
-                this.set('questionFindingsViewModel', new Models.QuestionFindingsViewModel(chapterId, question.id));
+                this.set('question', questionId);
+                this.set('questionFindingsViewModel', new Models.QuestionFindingsViewModel(chapterId, questionId));
             };
             QuestionDetailsViewModel.prototype.updateValues = function (e) {
                 console.log('updateValues', e, this);

@@ -23,8 +23,8 @@ var Experiments;
             }
             QuestionViewModel.prototype.showQuestionDetails = function (e) {
                 console.log('showQuestionDetails', e, this);
-                if (reviewApp.questionDetailsViewModel.question == null || reviewApp.questionDetailsViewModel.question.id != this.question.id)
-                    reviewApp.questionDetailsViewModel.initData(this.chapterId, this.question);
+                if (reviewApp.questionDetailsViewModel.questionId != this.question.id)
+                    reviewApp.questionDetailsViewModel.showCurrent(this.chapterId, this.question.id);
                 reviewApp.router.navigate('/chapters/' + this.chapterId + '/questions/' + this.question.id, true);
             };
             QuestionViewModel.prototype.createFinding = function () {

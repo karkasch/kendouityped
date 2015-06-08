@@ -16,37 +16,66 @@ var Experiments;
         ReviewApp.prototype.startApp = function () {
             var _this = this;
             this.router.route('/', function () {
-                // chapters
-                _this.chaptersViewModel = new Experiments.Models.ChaptersViewModel();
-                var chaptersView = new kendo.View('chapters-template', { model: _this.chaptersViewModel });
-                _this.layout.showIn('#chapters-view', chaptersView);
-                kendo.fx($("#chapters-view")).slideIn("up").play();
-                // question details
-                _this.questionDetailsViewModel = new Experiments.Models.QuestionDetailsViewModel();
-                var questionDetailsView = new kendo.View('question-details-template', { model: _this.questionDetailsViewModel });
-                _this.layout.showIn('#question-details-view', questionDetailsView);
-                kendo.fx($("#question-details-view")).slideIn("up").play();
+                _this.showChapters();
             });
             this.router.route('/chapters/:id', function (id) {
-                // chapters
-                _this.chaptersViewModel = new Experiments.Models.ChaptersViewModel();
-                var chaptersView = new kendo.View('chapters-template', { model: _this.chaptersViewModel });
-                _this.layout.showIn('#chapters-view', chaptersView);
-                kendo.fx($("#chapters-view")).slideIn("up").play();
-                _this.chaptersViewModel.chaptersDataSource.one('change', function (e) {
-                    console.log('change', e);
-                    var chapter = _this.chaptersViewModel.chaptersDataSource.get(id);
-                    chapter.showQuestions({ data: { id: id } });
-                });
-                // question details
-                _this.questionDetailsViewModel = new Experiments.Models.QuestionDetailsViewModel();
-                var questionDetailsView = new kendo.View('question-details-template', { model: _this.questionDetailsViewModel });
-                _this.layout.showIn('#question-details-view', questionDetailsView);
-                kendo.fx($("#question-details-view")).slideIn("up").play();
+                _this.showChapterQuestions(id);
+            });
+            this.router.route('/chapters/:chapterId/questions/:questionId', function (chapterId, questionId) {
+                _this.showChapterQuestion(chapterId, questionId);
             });
             this.router.start();
         };
         ReviewApp.prototype.showChapters = function () {
+            // chapters
+            this.chaptersViewModel = new Experiments.Models.ChaptersViewModel();
+            var chaptersView = new kendo.View('chapters-template', { model: this.chaptersViewModel });
+            this.layout.showIn('#chapters-view', chaptersView);
+            kendo.fx($("#chapters-view")).slideIn("up").play();
+            // question details
+            this.questionDetailsViewModel = new Experiments.Models.QuestionDetailsViewModel();
+            var questionDetailsView = new kendo.View('question-details-template', { model: this.questionDetailsViewModel });
+            this.layout.showIn('#question-details-view', questionDetailsView);
+            kendo.fx($("#question-details-view")).slideIn("up").play();
+        };
+        ReviewApp.prototype.showChapterQuestions = function (chapterId) {
+            var _this = this;
+            // chapters
+            this.chaptersViewModel = new Experiments.Models.ChaptersViewModel();
+            var chaptersView = new kendo.View('chapters-template', { model: this.chaptersViewModel });
+            this.layout.showIn('#chapters-view', chaptersView);
+            kendo.fx($("#chapters-view")).slideIn("up").play();
+            this.chaptersViewModel.chaptersDataSource.one('change', function (e) {
+                console.log('change', e);
+                var chapter = _this.chaptersViewModel.chaptersDataSource.get(chapterId);
+                chapter.showQuestions({ data: { id: chapterId } });
+            });
+            // question details
+            this.questionDetailsViewModel = new Experiments.Models.QuestionDetailsViewModel();
+            var questionDetailsView = new kendo.View('question-details-template', { model: this.questionDetailsViewModel });
+            this.layout.showIn('#question-details-view', questionDetailsView);
+            kendo.fx($("#question-details-view")).slideIn("up").play();
+        };
+        ReviewApp.prototype.showChapterQuestion = function (chapterId, questionId) {
+            var _this = this;
+            // chapters
+            this.chaptersViewModel = new Experiments.Models.ChaptersViewModel();
+            var chaptersView = new kendo.View('chapters-template', { model: this.chaptersViewModel });
+            this.layout.showIn('#chapters-view', chaptersView);
+            kendo.fx($("#chapters-view")).slideIn("up").play();
+            this.chaptersViewModel.chaptersDataSource.one('change', function (e) {
+                console.log('change', e);
+                var chapter = _this.chaptersViewModel.chaptersDataSource.get(chapterId);
+                chapter.showQuestions({ data: { id: chapterId } });
+            });
+            // question details
+            this.questionDetailsViewModel = new Experiments.Models.QuestionDetailsViewModel();
+            var questionDetailsView = new kendo.View('question-details-template', { model: this.questionDetailsViewModel });
+            this.layout.showIn('#question-details-view', questionDetailsView);
+            kendo.fx($("#question-details-view")).slideIn("up").play();
+        };
+        ReviewApp.prototype.showQuestionDetails = function (chapterId, questionId) {
+            this.questionDetailsViewModel.showCurrent(chapterId, questionId);
         };
         ReviewApp.prototype.createFinding = function (chapterId, questionId) {
             var chapter = this.chaptersViewModel.chaptersDataSource.get(chapterId);

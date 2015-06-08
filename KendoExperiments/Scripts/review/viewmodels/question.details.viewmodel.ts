@@ -1,25 +1,24 @@
 ﻿module Experiments.Models {
     export class QuestionDetailsViewModel extends kendo.data.ObservableObject {
         chapterId: number;
-        question: QuestionModel;
+        questionId: number;
         questionFindingsViewModel: QuestionFindingsViewModel;
 
-        constructor() {
+        constructor(chapterId?: number, questionId?: number) {
             super();
 
-            this.questionFindingsViewModel = new QuestionFindingsViewModel();
-        
-            this.bind('change', (e: any) => {
-                //if (e.field == 'questionName')
-                    //this.question.set('name', this.questionName);
-            });    
+            if (chapterId != null && questionId != null)
+                this.showCurrent(chapterId, questionId);
+            else {
+                this.questionFindingsViewModel = new QuestionFindingsViewModel();
+            }
         }
 
-        public initData(chapterId: number, question: QuestionModel) {
+        public showCurrent(chapterId: number, questionId: number) {
             this.set('chapterId', chapterId);
-            this.set('question', question);
+            this.set('question', questionId);
 
-            this.set('questionFindingsViewModel', new QuestionFindingsViewModel(chapterId, question.id));
+            this.set('questionFindingsViewModel', new QuestionFindingsViewModel(chapterId, questionId));
         }
 
         public updateValues(e: any) {
