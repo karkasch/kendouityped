@@ -32,10 +32,8 @@ namespace KendoExperiments
 
             bundles.Add(new ScriptBundle("~/scripts/review/app").Include(
                 "~/scripts/review/data/chapters.datasource.js",
-                "~/scripts/review/data/questions.datasource.js",
 
                 "~/scripts/review/models/chapters.datasourceitem.model.js",
-                "~/scripts/review/models/questions.datasourceitem.model.js",
                 "~/scripts/review/models/question.model.js",
                 
                 "~/Scripts/review/viewmodels/chapters.viewmodel.js",
@@ -45,7 +43,8 @@ namespace KendoExperiments
                 "~/Scripts/review/viewmodels/question.details.viewmodel.js",
                 "~/Scripts/review/viewmodels/question.findings.viewmodel.js",
                 
-                "~/Scripts/review/review.app.js"));
+                "~/Scripts/review/review.app.js",
+                "~/Scripts/review/review.app.setup.js"));
 
             bundles.Add(new StyleBundle("~/Content/review").Include(
                 "~/Content/review.css"

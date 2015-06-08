@@ -26,7 +26,7 @@
 
             kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
 
-            router.navigate('/chapters/' + this.id, true);
+            reviewApp.router.navigate('/chapters/' + this.id, true);
         }
 
     }

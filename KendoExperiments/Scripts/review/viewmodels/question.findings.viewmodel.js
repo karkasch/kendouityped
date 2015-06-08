@@ -25,7 +25,7 @@ var Experiments;
             }
             QuestionFindingsViewModel.prototype.createFinding = function (e) {
                 console.log('createFinding', e);
-                createFinding(this.chapterId, this.questionId);
+                reviewApp.createFinding(this.chapterId, this.questionId);
             };
             return QuestionFindingsViewModel;
         })(kendo.data.ObservableObject);

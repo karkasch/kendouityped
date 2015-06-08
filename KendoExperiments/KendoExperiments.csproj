@@ -1222,7 +1222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\contractsapp\data\" />
     <Folder Include="v8\" />
   </ItemGroup>
   <ItemGroup>
@@ -1234,10 +1233,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="kendo\typescript\kendo.all.d.ts" />
-    <TypeScriptCompile Include="Scripts\contractsapp\models\contracts.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\data\chapters.datasource.ts" />
     <TypeScriptCompile Include="Scripts\review\models\chapters.datasourceitem.model.ts" />
     <TypeScriptCompile Include="Scripts\review\models\question.model.ts" />
+    <TypeScriptCompile Include="Scripts\review\review.app.setup.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\chapters.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\question.details.viewmodel.ts" />
     <TypeScriptCompile Include="Scripts\review\viewmodels\question.findings.viewmodel.ts" />

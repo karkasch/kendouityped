@@ -23,7 +23,7 @@
         public createFinding(e: any) {
             console.log('createFinding', e);
 
-            createFinding(this.chapterId, this.questionId);
+            reviewApp.createFinding(this.chapterId, this.questionId);
         }
     }
 } 

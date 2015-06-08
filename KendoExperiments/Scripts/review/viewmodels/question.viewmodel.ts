@@ -22,10 +22,10 @@
         public showQuestionDetails(e: any) {
             console.log('showQuestionDetails', e, this);
 
-            if (questionDetailsViewModel.question == null || questionDetailsViewModel.question.id != this.question.id)
-                questionDetailsViewModel.initData(this.chapterId, this.question);
+            if (reviewApp.questionDetailsViewModel.question == null || reviewApp.questionDetailsViewModel.question.id != this.question.id)
+                reviewApp.questionDetailsViewModel.initData(this.chapterId, this.question);
 
-            router.navigate('/chapters/' + this.chapterId + '/questions/' + this.question.id, true);
+            reviewApp.router.navigate('/chapters/' + this.chapterId + '/questions/' + this.question.id, true);
         }
 
         public createFinding() {

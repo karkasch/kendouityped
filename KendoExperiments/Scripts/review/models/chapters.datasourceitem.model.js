@@ -22,7 +22,7 @@ var Experiments;
                 }
                 this.set('contentVisible', !this.get('contentVisible'));
                 kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
-                router.navigate('/chapters/' + this.id, true);
+                reviewApp.router.navigate('/chapters/' + this.id, true);
             };
             return ChapterDataSourceItemModel;
         })(kendo.data.Model);
