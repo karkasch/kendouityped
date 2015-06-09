@@ -16,7 +16,10 @@
 
         public showCurrent(chapterId: number, questionId: number) {
             this.set('chapterId', chapterId);
-            this.set('question', questionId);
+            this.set('questionId', questionId);
+
+            var chapter = reviewApp.chaptersViewModel.chaptersDataSource.get(chapterId);
+
 
             this.set('questionFindingsViewModel', new QuestionFindingsViewModel(chapterId, questionId));
         }

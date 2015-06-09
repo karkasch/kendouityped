@@ -20,7 +20,8 @@ var Experiments;
             }
             QuestionDetailsViewModel.prototype.showCurrent = function (chapterId, questionId) {
                 this.set('chapterId', chapterId);
-                this.set('question', questionId);
+                this.set('questionId', questionId);
+                var chapter = reviewApp.chaptersViewModel.chaptersDataSource.get(chapterId);
                 this.set('questionFindingsViewModel', new Models.QuestionFindingsViewModel(chapterId, questionId));
             };
             QuestionDetailsViewModel.prototype.updateValues = function (e) {

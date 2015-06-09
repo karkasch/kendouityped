@@ -13,8 +13,8 @@ var Experiments;
             function ChapterDataSourceItemModel(value) {
                 _super.call(this, value);
             }
-            ChapterDataSourceItemModel.prototype.showQuestions = function (e) {
-                console.log('showDetails', e);
+            ChapterDataSourceItemModel.prototype.showQuestions = function () {
+                console.log('showQuestions');
                 var questionsViewModel = this.get('questionsViewModel');
                 if (questionsViewModel == null) {
                     questionsViewModel = new Experiments.Models.QuestionsViewModel(this.id); //e.data.id);

@@ -23,9 +23,7 @@ var Experiments;
             }
             QuestionViewModel.prototype.showQuestionDetails = function (e) {
                 console.log('showQuestionDetails', e, this);
-                if (reviewApp.questionDetailsViewModel.questionId != this.question.id)
-                    reviewApp.questionDetailsViewModel.showCurrent(this.chapterId, this.question.id);
-                reviewApp.router.navigate('/chapters/' + this.chapterId + '/questions/' + this.question.id, true);
+                reviewApp.showQuestionDetails(this.chapterId, this.question.id);
             };
             QuestionViewModel.prototype.createFinding = function () {
                 this.set('hasFinding', !this.get('hasFinding'));

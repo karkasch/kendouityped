@@ -7,5 +7,9 @@
 
             this.chaptersDataSource = new Experiments.Data.ChaptersDataSource();
         }
+
+        public getChapterViewModel(chapterId: number): Experiments.Models.ChapterDataSourceItemModel {
+            return <Experiments.Models.ChapterDataSourceItemModel>this.chaptersDataSource.get(chapterId);
+        }
     }
 } 

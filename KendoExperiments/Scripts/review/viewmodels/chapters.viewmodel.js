@@ -14,6 +14,9 @@ var Experiments;
                 _super.call(this);
                 this.chaptersDataSource = new Experiments.Data.ChaptersDataSource();
             }
+            ChaptersViewModel.prototype.getChapterViewModel = function (chapterId) {
+                return this.chaptersDataSource.get(chapterId);
+            };
             return ChaptersViewModel;
         })(kendo.data.ObservableObject);
         Models.ChaptersViewModel = ChaptersViewModel;

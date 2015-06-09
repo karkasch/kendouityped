@@ -13,8 +13,8 @@
             super(value);
         }
 
-        public showQuestions(e: any) {
-            console.log('showDetails', e);
+        public showQuestions() {
+            console.log('showQuestions');
 
             var questionsViewModel = this.get('questionsViewModel');
             if (questionsViewModel == null) {
@@ -28,6 +28,6 @@
 
             reviewApp.router.navigate('/chapters/' + this.id, true);
         }
-
+        
     }
 } 
