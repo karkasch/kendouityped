@@ -35,15 +35,9 @@ var Experiments;
                 kendo.fx($("#chapters-view")).slideIn("up").play();
             }
         };
-        ReviewApp.prototype.showChapterQuestions = function (chapterId) {
-            var _this = this;
+        ReviewApp.prototype.showChapterQuestions = function (chapterId, questionId) {
             this.showChapters();
-            this.chaptersViewModel.chaptersDataSource.one('change', function (e) {
-                console.log('change', e);
-                var chapter = _this.chaptersViewModel.getChapterViewModel(chapterId);
-                chapter.showQuestions();
-            });
-            //this.showQuestionDetails();
+            this.chaptersViewModel.showQuestions(chapterId, questionId);
         };
         ReviewApp.prototype.showChapterQuestion = function (chapterId, questionId) {
             this.showChapterQuestions(chapterId);

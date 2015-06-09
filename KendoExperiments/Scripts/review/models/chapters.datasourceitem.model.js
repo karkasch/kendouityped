@@ -13,7 +13,7 @@ var Experiments;
             function ChapterDataSourceItemModel(value) {
                 _super.call(this, value);
             }
-            ChapterDataSourceItemModel.prototype.showQuestions = function () {
+            ChapterDataSourceItemModel.prototype.showQuestions = function (questionId) {
                 console.log('showQuestions');
                 var questionsViewModel = this.get('questionsViewModel');
                 if (questionsViewModel == null) {
@@ -22,7 +22,10 @@ var Experiments;
                 }
                 this.set('contentVisible', !this.get('contentVisible'));
                 kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
-                reviewApp.router.navigate('/chapters/' + this.id, true);
+                var route = '/chapters/' + this.id;
+                if (questionId != null)
+                    route += '/questions/' + questionId;
+                reviewApp.router.navigate(route, true);
             };
             return ChapterDataSourceItemModel;
         })(kendo.data.Model);

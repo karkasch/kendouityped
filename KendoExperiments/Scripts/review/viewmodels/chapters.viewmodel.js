@@ -17,6 +17,14 @@ var Experiments;
             ChaptersViewModel.prototype.getChapterViewModel = function (chapterId) {
                 return this.chaptersDataSource.get(chapterId);
             };
+            ChaptersViewModel.prototype.showQuestions = function (chapterId, questionId) {
+                var _this = this;
+                this.chaptersDataSource.fetch(function (e) {
+                    //console.log('chaptersDataSource fetched', e);
+                    var chapter = _this.getChapterViewModel(chapterId);
+                    chapter.showQuestions(questionId);
+                });
+            };
             return ChaptersViewModel;
         })(kendo.data.ObservableObject);
         Models.ChaptersViewModel = ChaptersViewModel;

@@ -48,22 +48,13 @@
             }
         }
 
-        public showChapterQuestions(chapterId: number) {
+        public showChapterQuestions(chapterId: number, questionId?: number) {
             this.showChapters();
-
-            this.chaptersViewModel.chaptersDataSource.one('change',(e) => {
-                console.log('change', e);
-
-                var chapter = this.chaptersViewModel.getChapterViewModel(chapterId);
-                chapter.showQuestions();
-            });
-                    
-            //this.showQuestionDetails();
+            this.chaptersViewModel.showQuestions(chapterId, questionId);
         }
       
         public showChapterQuestion(chapterId: number, questionId: number) {
             this.showChapterQuestions(chapterId);
-                  
             this.showQuestionDetails(chapterId, questionId);
         }
 

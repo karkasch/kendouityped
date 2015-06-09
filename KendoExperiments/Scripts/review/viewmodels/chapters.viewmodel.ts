@@ -11,5 +11,13 @@
         public getChapterViewModel(chapterId: number): Experiments.Models.ChapterDataSourceItemModel {
             return <Experiments.Models.ChapterDataSourceItemModel>this.chaptersDataSource.get(chapterId);
         }
+        
+        public showQuestions(chapterId: number, questionId?: number): void {
+            this.chaptersDataSource.fetch((e: any) => {
+                //console.log('chaptersDataSource fetched', e);
+                var chapter = this.getChapterViewModel(chapterId);
+                chapter.showQuestions(questionId);
+            });
+        }
     }
 } 

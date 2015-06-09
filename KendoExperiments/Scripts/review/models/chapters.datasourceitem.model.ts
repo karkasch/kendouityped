@@ -13,7 +13,7 @@
             super(value);
         }
 
-        public showQuestions() {
+        public showQuestions(questionId?: number) {
             console.log('showQuestions');
 
             var questionsViewModel = this.get('questionsViewModel');
@@ -26,7 +26,11 @@
 
             kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
 
-            reviewApp.router.navigate('/chapters/' + this.id, true);
+            var route = '/chapters/' + this.id;
+            if (questionId != null)
+                route += '/questions/' + questionId;
+
+            reviewApp.router.navigate(route, true);
         }
         
     }
