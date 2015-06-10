@@ -18,13 +18,15 @@ var Experiments;
                     url: '/api/v1/chapters/' + chapterId + '/questions/',
                     contentType: 'application/json'
                 }).done(function (response) {
+                    var questionsPanel = $('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel');
                     $.each(response, function (index, item) {
                         var questionModel = Models.QuestionModel.createInstance(item);
                         var questionViewModel = Models.QuestionViewModel.createInstance(chapterId, questionModel);
                         var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
-                        questionView.render($('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel'));
+                        questionView.render(questionsPanel);
                         _this.questions.push(questionViewModel);
                     });
+                    kendo.fx($('div[data-chapterid="' + chapterId + '"]').find('.questions-panel')).slideIn("left").play();
                 });
             }
             QuestionsViewModel.prototype.getQuestionViewModel = function (questionId) {

@@ -11,17 +11,21 @@
                 url: '/api/v1/chapters/' + chapterId + '/questions/',
                 contentType: 'application/json'
             }).done((response) => {
+
+                var questionsPanel = $('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel');
+
                 $.each(response,(index, item) => {
 
                     var questionModel = QuestionModel.createInstance(item);
                     var questionViewModel = QuestionViewModel.createInstance(chapterId, questionModel);
 
                     var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
-                    
-                    questionView.render($('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel'));
+                    questionView.render(questionsPanel);
                                         
                     this.questions.push(questionViewModel);
                 });
+
+                kendo.fx($('div[data-chapterid="' + chapterId + '"]').find('.questions-panel')).slideIn("left").play();
             });
         }
 

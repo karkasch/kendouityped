@@ -21,7 +21,7 @@ var Experiments;
                     this.set('questionsViewModel', questionsViewModel);
                 }
                 this.set('contentVisible', !this.get('contentVisible'));
-                kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
+                //kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
                 var route = '/chapters/' + this.id;
                 if (questionId != null)
                     route += '/questions/' + questionId;
