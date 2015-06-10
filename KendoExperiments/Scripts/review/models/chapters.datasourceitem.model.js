@@ -17,7 +17,7 @@ var Experiments;
                 console.log('showQuestions');
                 var questionsViewModel = this.get('questionsViewModel');
                 if (questionsViewModel == null) {
-                    questionsViewModel = new Experiments.Models.QuestionsViewModel(this.id); //e.data.id);
+                    questionsViewModel = new Experiments.Models.QuestionsViewModel(this.id);
                     this.set('questionsViewModel', questionsViewModel);
                 }
                 this.set('contentVisible', true);
