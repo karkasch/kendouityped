@@ -69,7 +69,7 @@ var Experiments;
             var route = '';
             if (chapterId != null)
                 route += '/chapters/' + chapterId;
-            if (chapterId != null)
+            if (questionId != null)
                 route += '/questions/' + questionId;
             if (route != '')
                 this.router.navigate(route, true);

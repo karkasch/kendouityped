@@ -24,8 +24,10 @@ var Experiments;
             };
             ChapterDataSourceItemModel.prototype.toggleQuestionsVisibility = function (e) {
                 this.set('contentVisible', !this.get('contentVisible'));
-                if (this.contentVisible && this.get('questionsViewModel') == null)
+                if (this.contentVisible && this.get('questionsViewModel') == null) {
                     this.showQuestions(e);
+                }
+                reviewApp.updateRoute(this.id);
             };
             return ChapterDataSourceItemModel;
         })(kendo.data.Model);

@@ -28,8 +28,11 @@
         public toggleQuestionsVisibility(e: any) {
             this.set('contentVisible', !this.get('contentVisible'));
 
-            if (this.contentVisible && this.get('questionsViewModel') == null)
+            if (this.contentVisible && this.get('questionsViewModel') == null) {
                 this.showQuestions(e);
+            }
+
+            reviewApp.updateRoute(this.id);
         }
         
     }
