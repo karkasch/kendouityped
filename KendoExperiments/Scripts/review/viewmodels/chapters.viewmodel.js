@@ -22,7 +22,7 @@ var Experiments;
                 this.chaptersDataSource.fetch(function (e) {
                     //console.log('chaptersDataSource fetched', e);
                     var chapter = _this.getChapterViewModel(chapterId);
-                    chapter.showQuestions(questionId);
+                    chapter.showQuestions(null, questionId);
                 });
             };
             return ChaptersViewModel;

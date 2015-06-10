@@ -16,7 +16,7 @@
             this.chaptersDataSource.fetch((e: any) => {
                 //console.log('chaptersDataSource fetched', e);
                 var chapter = this.getChapterViewModel(chapterId);
-                chapter.showQuestions(questionId);
+                chapter.showQuestions(null, questionId);
             });
         }
     }

@@ -13,7 +13,7 @@
             super(value);
         }
 
-        public showQuestions(questionId?: number) {
+        public showQuestions(e: any, questionId?: number) {
             console.log('showQuestions');
 
             var questionsViewModel = this.get('questionsViewModel');

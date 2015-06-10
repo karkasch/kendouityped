@@ -12,25 +12,25 @@ namespace KendoExperiments.api
         {
             Customers = new List<CustomerModel>()
             {
-                new CustomerModel() { Id = 1, Name = "EasyJet", Description = "Test customer"},
-                new CustomerModel() { Id = 2, Name = "AerCap", Description = "Test customer"},
-                new CustomerModel() { Id = 3, Name = "Test", Description = "Test customer"},
-                new CustomerModel() { Id = 4, Name = "KLM", Description = "Test customer"},
+              
             };
 
             Chapters = new List<ChapterModel>()
             {
-                new ChapterModel() { Id = 1, Name = "Test", Order = 1 },
+                new ChapterModel() { Id = 1, Name = "Start", Order = 1 },
                 new ChapterModel() { Id = 2, Name = "Upload", Order = 2 },
-                new ChapterModel() { Id = 3, Name = "Engine", Order = 3 },
+                new ChapterModel() { Id = 3, Name = "Prologue", Order = 3 },
+                new ChapterModel() { Id = 4, Name = "Content", Order = 3 },
+                new ChapterModel() { Id = 5, Name = "Final", Order = 3 },
             };
 
             Questions = new List<QuestionModel>()
             {
                 new QuestionModel() { Id = 1, Name = "Age?", Order = 1, QuestionType = "T", Answer = "29" },
                 new QuestionModel() { Id = 2, Name = "Name?", Order = 2, QuestionType = "T" },
-                new QuestionModel() { Id = 3, Name = "Engine date", Order = 3, QuestionType = "T" },
+                new QuestionModel() { Id = 3, Name = "Date", Order = 3, QuestionType = "T" },
                 new QuestionModel() { Id = 4, Name = "Yes/No", Order = 4, QuestionType = "L", AvailableList = "Yes\nNo\nMaybe", Answer = "No" },
+                new QuestionModel() { Id = 5, Name = "Source", Order = 4, QuestionType = "L", AvailableList = "Books\nNews\nMagazine", Answer = "" },
             };
         }
 
