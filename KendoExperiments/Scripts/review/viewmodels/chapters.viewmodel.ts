@@ -13,11 +13,18 @@
         }
         
         public showQuestions(chapterId: number, questionId?: number): void {
-            this.chaptersDataSource.fetch((e: any) => {
-                //console.log('chaptersDataSource fetched', e);
-                var chapter = this.getChapterViewModel(chapterId);
-                chapter.showQuestions(null, questionId);
-            });
+            if (this.chaptersDataSource.data().length > 0) {
+                this.showChapterQuestions(chapterId, questionId);
+            } else {
+                this.chaptersDataSource.fetch((e: any) => {
+                    this.showChapterQuestions(chapterId, questionId);
+                });
+            }
+        }
+
+        private showChapterQuestions(chapterId: number, questionId?: number) {
+            var chapter = this.getChapterViewModel(chapterId);
+            chapter.showQuestions(null, questionId);   
         }
     }
 } 

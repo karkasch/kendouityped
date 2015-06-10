@@ -19,11 +19,18 @@ var Experiments;
             };
             ChaptersViewModel.prototype.showQuestions = function (chapterId, questionId) {
                 var _this = this;
-                this.chaptersDataSource.fetch(function (e) {
-                    //console.log('chaptersDataSource fetched', e);
-                    var chapter = _this.getChapterViewModel(chapterId);
-                    chapter.showQuestions(null, questionId);
-                });
+                if (this.chaptersDataSource.data().length > 0) {
+                    this.showChapterQuestions(chapterId, questionId);
+                }
+                else {
+                    this.chaptersDataSource.fetch(function (e) {
+                        _this.showChapterQuestions(chapterId, questionId);
+                    });
+                }
+            };
+            ChaptersViewModel.prototype.showChapterQuestions = function (chapterId, questionId) {
+                var chapter = this.getChapterViewModel(chapterId);
+                chapter.showQuestions(null, questionId);
             };
             return ChaptersViewModel;
         })(kendo.data.ObservableObject);

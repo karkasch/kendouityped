@@ -54,7 +54,6 @@ C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.Owin.Security.OAuth.
 C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.Owin.Security.Google.xml
 C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Projects\dev\kendouityped\KendoExperiments\obj\Debug\KendoExperiments.csprojResolveAssemblyReference.cache
 C:\Projects\dev\kendouityped\KendoExperiments\obj\Debug\KendoExperiments.dll
 C:\Projects\dev\kendouityped\KendoExperiments\obj\Debug\KendoExperiments.pdb
 C:\Projects\dev\kendouityped\KendoExperiments\bin\KendoExperiments.dll.config
@@ -122,3 +121,4 @@ C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.Owin.Security.MicrosoftAc
 C:\dev\KendoExperiments\KendoExperiments\obj\Debug\KendoExperiments.csprojResolveAssemblyReference.cache
 C:\dev\KendoExperiments\KendoExperiments\obj\Debug\KendoExperiments.dll
 C:\dev\KendoExperiments\KendoExperiments\obj\Debug\KendoExperiments.pdb
+C:\Projects\dev\kendouityped\KendoExperiments\obj\Debug\KendoExperiments.csprojResolveAssemblyReference.cache

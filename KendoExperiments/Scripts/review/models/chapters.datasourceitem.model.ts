@@ -22,15 +22,14 @@
                 this.set('questionsViewModel', questionsViewModel);
             }
 
+            this.set('contentVisible', true);
+        }
+
+        public toggleQuestionsVisibility(e: any) {
             this.set('contentVisible', !this.get('contentVisible'));
 
-            //kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
-
-            var route = '/chapters/' + this.id;
-            if (questionId != null)
-                route += '/questions/' + questionId;
-
-            reviewApp.router.navigate(route, true);
+            if (this.contentVisible && this.get('questionsViewModel') == null)
+                this.showQuestions(e);
         }
         
     }

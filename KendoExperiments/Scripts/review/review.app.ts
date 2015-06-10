@@ -40,6 +40,8 @@
         public showChapters() {
             // chapters
             if (this.chaptersViewModel == null) {
+                $('.left-panel').height($(window).height() - 80);
+
                 this.chaptersViewModel = new Experiments.Models.ChaptersViewModel();
                 var chaptersView = new kendo.View('chapters-template', { model: this.chaptersViewModel });
                 this.layout.showIn('#chapters-view', chaptersView);
@@ -51,11 +53,17 @@
         public showChapterQuestions(chapterId: number, questionId?: number) {
             this.showChapters();
             this.chaptersViewModel.showQuestions(chapterId, questionId);
+
+            if (questionId != null)
+                this.showQuestionDetails(chapterId, questionId);
+
+            this.updateRoute(chapterId, questionId);
         }
       
         public showChapterQuestion(chapterId: number, questionId: number) {
             this.showChapterQuestions(chapterId);
             this.showQuestionDetails(chapterId, questionId);
+            this.updateRoute(chapterId, questionId);
         }
 
         public showQuestionDetails(chapterId?: number, questionId?: number) {
@@ -69,10 +77,10 @@
                 kendo.fx($("#question-details-view")).slideIn("up").play();
             }
 
-            if (chapterId != null && questionId != null) {
+            if (chapterId != null && questionId != null)
                 this.questionDetailsViewModel.showCurrent(chapterId, questionId);
-                reviewApp.router.navigate('/chapters/' + chapterId + '/questions/' + questionId, true);
-            }
+            
+            this.updateRoute(chapterId, questionId);
         }
 
         public createFinding(chapterId: number, questionId: number): void {
@@ -80,6 +88,16 @@
 
             var questionViewModel = chapter.questionsViewModel.getQuestionViewModel(questionId);
             questionViewModel.createFinding();
+        }
+
+        private updateRoute(chapterId?: number, questionId?: number) {
+            var route = '';
+            if (chapterId != null)
+                route += '/chapters/' + chapterId;
+            if (chapterId != null)
+                route += '/questions/' + questionId;
+            if (route != '')
+                this.router.navigate(route, true);
         }
     }
 }

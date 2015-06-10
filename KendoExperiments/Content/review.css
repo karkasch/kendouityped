@@ -54,6 +54,7 @@ footer {
 .chapters-panel .chapter .item-title {
   font-weight: bold;
   padding: 5px 0 5px 10px;
+  overflow-y: auto;
 }
 .chapters-panel .chapter .item-title:hover {
   cursor: pointer;
@@ -74,4 +75,3 @@ footer {
 .question-details .findings-panel {
   padding: 15px;
 }
-/*# sourceMappingURL=review.css.map */

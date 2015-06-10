@@ -20,12 +20,12 @@ var Experiments;
                     questionsViewModel = new Experiments.Models.QuestionsViewModel(this.id); //e.data.id);
                     this.set('questionsViewModel', questionsViewModel);
                 }
+                this.set('contentVisible', true);
+            };
+            ChapterDataSourceItemModel.prototype.toggleQuestionsVisibility = function (e) {
                 this.set('contentVisible', !this.get('contentVisible'));
-                //kendo.fx($('div[data-chapterid="' + this.id + '"]').find('.questions-panel')).slideIn("left").play();
-                var route = '/chapters/' + this.id;
-                if (questionId != null)
-                    route += '/questions/' + questionId;
-                reviewApp.router.navigate(route, true);
+                if (this.contentVisible && this.get('questionsViewModel') == null)
+                    this.showQuestions(e);
             };
             return ChapterDataSourceItemModel;
         })(kendo.data.Model);

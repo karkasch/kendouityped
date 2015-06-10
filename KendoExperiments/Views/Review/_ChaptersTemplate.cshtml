@@ -9,7 +9,7 @@
 
 <script id="chapter-item-template" type="text/x-kendo-template">
     <div class="chapter" data-chapterid="#= id #">
-        <div class="item-title" data-bind="events: { click: showQuestions }">
+        <div class="item-title" data-bind="events: { click: toggleQuestionsVisibility }">
             <span data-bind="html: name"></span>
         </div>
         <div class="item-content" data-bind="visible: contentVisible">
