@@ -27,6 +27,13 @@
         public updateValues(e: any) {
             console.log('updateValues', e, this);
         }
+
+        public updateHistory(chapterId: number, question: QuestionModel) {
+            if (this.chapterId != chapterId || this.questionId != question.id)
+                return;
+
+            // TODO: update
+        }
     }
 
     export class QuestionDetailsModel {

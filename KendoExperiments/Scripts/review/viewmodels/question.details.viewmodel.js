@@ -27,6 +27,11 @@ var Experiments;
             QuestionDetailsViewModel.prototype.updateValues = function (e) {
                 console.log('updateValues', e, this);
             };
+            QuestionDetailsViewModel.prototype.updateHistory = function (chapterId, question) {
+                if (this.chapterId != chapterId || this.questionId != question.id)
+                    return;
+                // TODO: update
+            };
             return QuestionDetailsViewModel;
         })(kendo.data.ObservableObject);
         Models.QuestionDetailsViewModel = QuestionDetailsViewModel;

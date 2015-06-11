@@ -62,6 +62,7 @@ var Experiments;
         };
         ReviewApp.prototype.questionAnswerChanged = function (chapterId, questionId, answer) {
             console.log('questionAnswerChanged', questionId, answer);
+            //this.questionDetailsViewModel.updateHistory(chapterId, 
         };
         ReviewApp.prototype.createFinding = function (chapterId, questionId) {
             var chapter = this.chaptersViewModel.chaptersDataSource.get(chapterId);

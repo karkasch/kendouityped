@@ -122,3 +122,7 @@ C:\dev\KendoExperiments\KendoExperiments\obj\Debug\KendoExperiments.csprojResolv
 C:\dev\KendoExperiments\KendoExperiments\obj\Debug\KendoExperiments.dll
 C:\dev\KendoExperiments\KendoExperiments\obj\Debug\KendoExperiments.pdb
 C:\Projects\dev\kendouityped\KendoExperiments\obj\Debug\KendoExperiments.csprojResolveAssemblyReference.cache
+C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

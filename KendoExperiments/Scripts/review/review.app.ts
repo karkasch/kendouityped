@@ -85,6 +85,8 @@
 
         public questionAnswerChanged(chapterId: number, questionId: number, answer: any) {
             console.log('questionAnswerChanged', questionId, answer);
+
+            //this.questionDetailsViewModel.updateHistory(chapterId, 
         }
 
         public createFinding(chapterId: number, questionId: number): void {
