@@ -60,6 +60,9 @@ var Experiments;
                 this.questionDetailsViewModel.showCurrent(chapterId, questionId);
             this.updateRoute(chapterId, questionId);
         };
+        ReviewApp.prototype.questionAnswerChanged = function (chapterId, questionId, answer) {
+            console.log('questionAnswerChanged', questionId, answer);
+        };
         ReviewApp.prototype.createFinding = function (chapterId, questionId) {
             var chapter = this.chaptersViewModel.chaptersDataSource.get(chapterId);
             var questionViewModel = chapter.questionsViewModel.getQuestionViewModel(questionId);

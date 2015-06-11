@@ -29,6 +29,21 @@
             this.set('hasFinding', !this.get('hasFinding'));
         }
 
+        public answerChanged(e: any) {
+            console.log('answerChanged', e);
+
+            this.question.set('answer', this.answer);
+
+            $.ajax({
+                url: '/api/v1/chapters/' + this.chapterId + '/questions/' + this.question.id,
+                contentType: 'application/json',
+                type: 'POST',
+                data: JSON.stringify(this.question)
+            }).done((response: any) => {
+                reviewApp.questionAnswerChanged(this.chapterId, this.question.id, this.answer);
+            });
+        }
+
         static createInstance(chapterId: number, question: QuestionModel): QuestionViewModel {
             if (question.questionType == "T")
                 return new QuestionTextViewModel(chapterId, question);

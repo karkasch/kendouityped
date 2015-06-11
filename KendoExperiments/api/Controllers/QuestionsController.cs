@@ -15,6 +15,12 @@ namespace KendoExperiments.api.Controllers
             return Db.Questions;
         }
 
+        public QuestionModel Post([FromUri]int chapterId, [FromUri]int id, [FromBody]QuestionModel model)
+        {
+            model.ModifiedDate = DateTime.UtcNow;
+            return model;
+        }
+
         [HttpGet]
         public object Details([FromUri]int chapterId, [FromUri]int id)
         {

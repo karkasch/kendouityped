@@ -21,12 +21,16 @@ var Experiments;
                     var questionsPanel = $('.chapter[data-chapterid=' + chapterId + ']').find('.questions-panel');
                     $.each(response, function (index, item) {
                         var questionModel = Models.QuestionModel.createInstance(item);
-                        var questionViewModel = Models.QuestionViewModel.createInstance(chapterId, questionModel);
-                        var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
-                        questionView.render(questionsPanel);
-                        _this.questions.push(questionViewModel);
+                        if (questionModel != null) {
+                            var questionViewModel = Models.QuestionViewModel.createInstance(chapterId, questionModel);
+                            if (QuestionsViewModel != null) {
+                                var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
+                                questionView.render(questionsPanel);
+                                _this.questions.push(questionViewModel);
+                            }
+                        }
                     });
-                    kendo.fx($('div[data-chapterid="' + chapterId + '"]').find('.questions-panel')).slideIn("left").play();
+                    kendo.fx(questionsPanel).slideIn("left").play();
                 });
             }
             QuestionsViewModel.prototype.getQuestionViewModel = function (questionId) {

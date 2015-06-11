@@ -83,6 +83,10 @@
             this.updateRoute(chapterId, questionId);
         }
 
+        public questionAnswerChanged(chapterId: number, questionId: number, answer: any) {
+            console.log('questionAnswerChanged', questionId, answer);
+        }
+
         public createFinding(chapterId: number, questionId: number): void {
             var chapter = <Experiments.Models.ChapterDataSourceItemModel>this.chaptersViewModel.chaptersDataSource.get(chapterId);
 

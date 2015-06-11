@@ -4,7 +4,7 @@
     <div class="question-item" data-bind="events: { click: showQuestionDetails }">
         <div>[T] <span data-bind="visible: hasFinding" class="finding-icon"></span> <span data-bind="text: question.name"></span></div>
         <div>
-            <input type="text" data-bind="value: answer, events: { focus: showQuestionDetails }" class="k-textbox" />
+            <input type="text" data-bind="value: answer, events: { focus: showQuestionDetails, change: answerChanged }" class="k-textbox" />
         </div>
     </div>
 </script>

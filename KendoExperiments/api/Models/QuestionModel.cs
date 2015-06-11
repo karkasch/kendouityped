@@ -13,5 +13,6 @@ namespace KendoExperiments.api.Models
         public string Answer { get; set; }
         public string QuestionType { get; set; }
         public string AvailableList { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 }

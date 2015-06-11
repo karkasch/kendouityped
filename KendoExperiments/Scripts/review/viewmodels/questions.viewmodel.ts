@@ -17,15 +17,19 @@
                 $.each(response,(index, item) => {
 
                     var questionModel = QuestionModel.createInstance(item);
-                    var questionViewModel = QuestionViewModel.createInstance(chapterId, questionModel);
+                    if (questionModel != null) {
+                        var questionViewModel = QuestionViewModel.createInstance(chapterId, questionModel);
+                        if (QuestionsViewModel != null) {
+                            var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
+                            questionView.render(questionsPanel);
 
-                    var questionView = new kendo.View(questionViewModel.viewTemplate, { model: questionViewModel });
-                    questionView.render(questionsPanel);
-                                        
-                    this.questions.push(questionViewModel);
+                            this.questions.push(questionViewModel);
+                        }
+                    }
+
                 });
 
-                kendo.fx($('div[data-chapterid="' + chapterId + '"]').find('.questions-panel')).slideIn("left").play();
+                kendo.fx(questionsPanel).slideIn("left").play();
             });
         }
 

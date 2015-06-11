@@ -28,6 +28,19 @@ var Experiments;
             QuestionViewModel.prototype.createFinding = function () {
                 this.set('hasFinding', !this.get('hasFinding'));
             };
+            QuestionViewModel.prototype.answerChanged = function (e) {
+                var _this = this;
+                console.log('answerChanged', e);
+                this.question.set('answer', this.answer);
+                $.ajax({
+                    url: '/api/v1/chapters/' + this.chapterId + '/questions/' + this.question.id,
+                    contentType: 'application/json',
+                    type: 'POST',
+                    data: JSON.stringify(this.question)
+                }).done(function (response) {
+                    reviewApp.questionAnswerChanged(_this.chapterId, _this.question.id, _this.answer);
+                });
+            };
             QuestionViewModel.createInstance = function (chapterId, question) {
                 if (question.questionType == "T")
                     return new QuestionTextViewModel(chapterId, question);
