@@ -19,8 +19,6 @@ namespace KendoExperiments.ReviewHub
         public void UpdateQuestionHistory(string reviewId, int chapterId, int questionId, string item)
         {
             _instance.Value.UpdateQuestionHistory(reviewId, chapterId, questionId, item);
-            //Clients.All.hello();
-            //Clients.All.updateHistory(chapterId, questionId, item);
         }
     }
 }

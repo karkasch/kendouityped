@@ -13,7 +13,7 @@
     <div class="question-item" data-bind="events: { click: showQuestionDetails }">
         <div>[L] <span data-bind="text: question.name"></span></div>
         <div>
-            <select data-role="dropdownlist" data-bind="value: answer, source: availableList, events: { focus: showQuestionDetails }"></select>
+            <select data-role="dropdownlist" data-bind="value: answer, source: availableList, events: { focus: showQuestionDetails, change: answerChanged }"></select>
         </div>
     </div>
 </script>
