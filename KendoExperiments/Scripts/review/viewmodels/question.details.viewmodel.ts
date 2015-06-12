@@ -4,6 +4,8 @@
         questionId: number;
         questionFindingsViewModel: QuestionFindingsViewModel;
 
+        answerHistory: Array<string>;
+
         constructor(chapterId?: number, questionId?: number) {
             super();
 
@@ -12,6 +14,8 @@
             else {
                 this.questionFindingsViewModel = new QuestionFindingsViewModel();
             }
+
+            this.set('answerHistory', []);
         }
 
         public showCurrent(chapterId: number, questionId: number) {
@@ -28,17 +32,21 @@
             console.log('updateValues', e, this);
         }
 
-        public updateHistory(chapterId: number, question: QuestionModel) {
-            if (this.chapterId != chapterId || this.questionId != question.id)
-                return;
+        //public updateHistory(chapterId: number, question: QuestionModel) {
+        //    if (this.chapterId != chapterId || this.questionId != question.id)
+        //        return;
 
-            // TODO: update
-        }
+        //    // TODO: update
+        //}
     }
 
     export class QuestionDetailsModel {
         id: number;
         name: string;
         createdDate: Date;
+    }
+
+    export class AnswerHistoryLine {
+        
     }
 } 

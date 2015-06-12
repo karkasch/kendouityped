@@ -18,6 +18,10 @@ namespace KendoExperiments.api.Controllers
         public QuestionModel Post([FromUri]int chapterId, [FromUri]int id, [FromBody]QuestionModel model)
         {
             model.ModifiedDate = DateTime.UtcNow;
+
+            var hub = new ReviewHub.ReviewHub();
+            hub.UpdateQuestionHistory("test-review", chapterId, id, "Question answered: " + model.Answer);
+
             return model;
         }
 

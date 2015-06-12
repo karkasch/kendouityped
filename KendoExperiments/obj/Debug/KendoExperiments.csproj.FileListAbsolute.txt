@@ -126,3 +126,7 @@ C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.Core.dll
 C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
 C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\dev\KendoExperiments\KendoExperiments\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Projects\dev\kendouityped\KendoExperiments\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

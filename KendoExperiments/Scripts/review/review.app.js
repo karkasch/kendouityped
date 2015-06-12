@@ -78,6 +78,12 @@ var Experiments;
             if (route != '')
                 this.router.navigate(route, true);
         };
+        ReviewApp.prototype.updateQuestionHistory = function (chapterId, questionId, message) {
+            console.log('updateQuestionHistory', chapterId, questionId, message);
+            if (this.questionDetailsViewModel.chapterId != chapterId || this.questionDetailsViewModel.questionId != questionId)
+                return;
+            this.questionDetailsViewModel.answerHistory.push(message);
+        };
         return ReviewApp;
     })();
     Experiments.ReviewApp = ReviewApp;

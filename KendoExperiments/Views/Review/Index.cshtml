@@ -21,6 +21,9 @@
 @{ Html.RenderPartial("_QuestionDetailsTemplate", Model); }
 
 @section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="signalr/hubs"></script>
     <script src="~/kendo/js/kendo.all.min.js"></script>
+
     @Scripts.Render("~/scripts/review/app")
 }

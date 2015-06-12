@@ -9,7 +9,8 @@ namespace KendoExperiments
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            app.MapSignalR();
+            //app.MapSignalR();
+            Microsoft.AspNet.SignalR.StockTicker.Startup.ConfigureSignalR(app);
         }
     }
 }

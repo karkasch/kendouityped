@@ -18,7 +18,7 @@
             <li>
                 <span>History</span>
                 <div>
-                    H
+                    <ul data-bind="source: answerHistory" data-template="question-history-item-template"></ul>
                 </div>
             </li>
         </ul>
@@ -34,7 +34,8 @@
 <script id="question-explain-template" type="text/x-kendo-template">
 </script>
 
-<script id="question-history-template" type="text/x-kendo-template">
+<script id="question-history-item-template" type="text/x-kendo-template">
+    <li>#= data #</li>
 </script>
 
 

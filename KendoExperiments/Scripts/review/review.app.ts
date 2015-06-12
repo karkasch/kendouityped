@@ -105,5 +105,14 @@
             if (route != '')
                 this.router.navigate(route, true);
         }
+
+        public updateQuestionHistory(chapterId: number, questionId: number, message: string) {
+            console.log('updateQuestionHistory', chapterId, questionId, message);
+
+            if (this.questionDetailsViewModel.chapterId != chapterId || this.questionDetailsViewModel.questionId != questionId)
+                return;
+
+            this.questionDetailsViewModel.answerHistory.push(message);
+        }
     }
 }

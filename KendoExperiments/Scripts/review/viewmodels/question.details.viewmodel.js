@@ -17,6 +17,7 @@ var Experiments;
                 else {
                     this.questionFindingsViewModel = new Models.QuestionFindingsViewModel();
                 }
+                this.set('answerHistory', []);
             }
             QuestionDetailsViewModel.prototype.showCurrent = function (chapterId, questionId) {
                 this.set('chapterId', chapterId);
@@ -27,11 +28,6 @@ var Experiments;
             QuestionDetailsViewModel.prototype.updateValues = function (e) {
                 console.log('updateValues', e, this);
             };
-            QuestionDetailsViewModel.prototype.updateHistory = function (chapterId, question) {
-                if (this.chapterId != chapterId || this.questionId != question.id)
-                    return;
-                // TODO: update
-            };
             return QuestionDetailsViewModel;
         })(kendo.data.ObservableObject);
         Models.QuestionDetailsViewModel = QuestionDetailsViewModel;
@@ -41,6 +37,12 @@ var Experiments;
             return QuestionDetailsModel;
         })();
         Models.QuestionDetailsModel = QuestionDetailsModel;
+        var AnswerHistoryLine = (function () {
+            function AnswerHistoryLine() {
+            }
+            return AnswerHistoryLine;
+        })();
+        Models.AnswerHistoryLine = AnswerHistoryLine;
     })(Models = Experiments.Models || (Experiments.Models = {}));
 })(Experiments || (Experiments = {}));
 //# sourceMappingURL=question.details.viewmodel.js.map
